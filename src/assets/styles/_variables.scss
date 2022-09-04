@@ -1,0 +1,195 @@
+// font 
+$primary-font:'Nanum Myeongjo', serif;
+$secondary-font:'Bodoni Moda', serif;
+$tertiary-font:'Roboto', sans-serif;
+$quaternary-font: 'Courier Prime', monospace;
+
+
+//font size in different browser screen
+
+
+@mixin contentFontSetting_320px{
+    font-family: "Nanum Myeongjo", serif;
+    text-align: justify;
+    font-size: 0.8rem;
+    line-height: 1.2rem;
+    letter-spacing: 0rem;
+}
+
+@mixin contentFontSetting_760px{
+    font-family: "Nanum Myeongjo", serif;
+    text-align: justify;
+    font-size: 1.2rem;
+    line-height: 2.1rem;
+}
+
+
+
+@mixin titleFontSetting{
+    @media(min-width:320px){
+        font-size: 1.4rem;
+        letter-spacing: .1rem;
+    }  
+    @media(min-width:760px){
+        font-size: 3rem;
+        letter-spacing: .1rem;
+    }
+    // @media(min-width:820px){}
+    // @media(min-width:1020px){}
+    // @media(min-width:1300px){}
+    // @media(min-width:1500px){}
+}
+
+@mixin titleSetting{
+    font-family: 'Roboto', sans-serif;
+    font-weight: 100;
+    width:100%;
+    text-align: center;
+    margin-bottom:1rem;
+    @include titleFontSetting();
+  
+}
+
+// @mixin contentFontSetting_1024px{
+//     font-family: "Nanum Myeongjo", serif;
+//     text-align: justify;
+//     font-size: 0.8rem;
+//     line-height: 1.2rem;
+// }
+
+/*  Google Font Style */
+/*  font-family: 'Bodoni Moda', serif;
+font-family: 'Courier Prime', monospace;
+font-family: 'Julius Sans One', sans-serif;
+font-family: 'Kalam', cursive;
+font-family: 'Nanum Myeongjo', serif;
+font-family: 'Noto Sans TC', sans-serif;
+font-family: 'Roboto', sans-serif; */
+
+
+// Center object
+@mixin vertical-horizontal-center{
+    display:flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+@mixin column-horizontal-center{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+@mixin row-horizontal-center{
+    display: flex;
+    align-items: center;
+}
+
+@mixin vertical-center{
+    position:absolute;
+    top:50%;
+    transform: translateY(-50%);
+}
+
+@mixin horizontal-center{
+    position:absolute;
+    left:50%;
+    transform: translateX(-50%);
+}
+
+@mixin child-center{
+    position:absolute;
+    top:50%;
+    left:50%;
+    transform: translateX(-50%) translateY(-50%);
+}
+
+
+$grey : #757575;
+
+// $skillCardWidth: 40.6rem;
+
+// Project rightside width:
+$projectRightSideWidth: 39%;
+$projectLeftSideTopSideHeight: 20rem;
+
+//Final page
+$assignmentsWidth:0%;
+$assignmentsheight:$assignmentsWidth/1.2;
+
+
+
+// Show border line during contruction:
+$borderLine: solid thin grey;
+
+
+@mixin OptionKatzeSubPageTitle{
+    position: relative;
+    width:100%;
+    min-height:44px;
+    min-width:284px;
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+}
+
+
+@mixin OptionKatzeMainTitle{
+    position: relative;
+    width:100%;
+    font-family: $secondary-font;
+    font-size:1.1rem;
+    letter-spacing: 0rem;
+    text-align: left; 
+    @media(min-width: 320px){
+        font-size:1.1rem;
+    }
+    @media(min-width:400px){
+        font-size: 1.7rem;
+    }
+    // @media(min-width:760px){}
+    // @media(min-width:820px){}
+    @media(min-width:1020px){
+        font-size: 2.2rem;
+    }
+    // @media(min-width:1300px){}
+    // @media(min-width:1500px){}
+}
+
+
+@mixin OptionKatzeSubTitle{
+    position: relative;
+    width:100%;
+    font-size: 0.6rem;
+    font-weight: 500;
+    font-family: $secondary-font;
+    letter-spacing: .1rem;
+    padding-left: .2rem;
+    text-align: left;
+    @media(min-width: 320px){
+        font-size: 0.6rem;
+        padding-left: .2rem;
+    }
+    @media(min-width:760px){
+        font-size: 0.9rem;
+    }
+    // @media(min-width:760px){}
+    // @media(min-width:820px){}
+    @media(min-width:1020px){
+        font-size: 1.3rem;
+    }
+    // @media(min-width:1300px){}
+    // @media(min-width:1500px){}
+}
+
+
+
+
+// @media(min-width:320px){}
+// @media(min-width:400px){}
+// @media(min-width:760px){}
+// @media(min-width:820px){}
+// @media(min-width:1020px){}
+// @media(min-width:1300px){}
+// @media(min-width:1500px){}
