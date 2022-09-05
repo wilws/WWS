@@ -24,6 +24,12 @@ export default {
             } else {
                 document.querySelector(id).classList.remove('rotated');
             }
+        },
+        defaultBoxes(){
+            // turn all boxes back to the first page
+            document.querySelectorAll(".firstPage").forEach((e)=>{
+                e.click();
+            });
         }
 
     }

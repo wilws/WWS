@@ -446,13 +446,16 @@ export default {
 
     .skill-set-page{
         position: relative;
-        width:100%;
-        height:100%;
+        width:100vw;
+        height:100vh;
         background-color: white;
-        // overflow: hidden;
-        // overflow-y: scroll;
+
+      
         // padding:1.3rem;    //set here will affect the card moving
         $headerHeight: 20%;
+
+        display: flex;
+        flex-direction: column;
         
         .header{
             position:relative;
@@ -580,6 +583,7 @@ export default {
                     border:none;
                     background-color: none;
                     padding:.2rem;
+                    color:black;
 
                     @media (min-width:320px){
                         @include buttonSetting_320px();
@@ -789,6 +793,11 @@ export default {
             margin-bottom:.5rem;
             height:$headerHeight_h;
         }
+
+        @media (min-width:700px){
+            $headerHeight_h:14%;
+            height:$headerHeight_h;
+        }
         @media (min-width:1020px){
             $headerHeight_h:14%;
             height:$headerHeight_h;
@@ -858,6 +867,11 @@ export default {
             height:calc(100% - $headerHeight_h);
         }
 
+        @media (min-width:560px){
+            // align-items: unset;
+            margin-top:1.5rem;
+        }
+
         @media (min-width:1020px){
              height:calc(100% - $headerHeight_h);
              align-items: center;
@@ -917,7 +931,7 @@ export default {
                         margin:1.7rem;
                     } 
                     @media(min-width:730px){
-                        margin:2rem;
+                        margin:1.5rem;
                     } 
                     @media(min-width:1020px){
                         margin:2.6rem;
@@ -989,7 +1003,7 @@ export default {
                             .tech-icon{
                                 @media(min-width:560px){
                                     // min-height: 20px;
-                                    min-width: 20px;
+                                    min-width: 18px;
                                     object-fit:fill;
                                 }
                                 // @media(min-width:730px){

@@ -167,6 +167,9 @@ export default {
 
 #web-project-3.rotated div div div.face4 .slot-wrapper {
 
+    @media(min-width:560px){
+        padding:1rem 2rem;
+    }
     .title-wrapper{
         .title{
             h1{

@@ -131,7 +131,7 @@ export default {
             const content = `${this.id}  div div.left-wrapper div.lower-wrapper div.content`;
             const page = document.querySelector(this.id);
             const travelDistance = window.innerHeight + window.pageYOffset;
-            const triggerPoint = page.offsetTop + page.offsetHeight/2;
+            const triggerPoint = page.offsetTop + page.offsetHeight/3.5;
             
             if (travelDistance > triggerPoint){
                 headerMovingItems.forEach((item) => {
@@ -172,12 +172,16 @@ export default {
 
 <style lang="scss" scoped>
 .section{
-    background-color: transparent;
-
+    position:relative;
     width:100%;
-    height:100%;
+    height:100vh;
+    // min-height:100vh;  
+    display: flex;
+    justify-content: start;
+    border-top: rgb(0, 0, 0) thick solid;
+    overflow: hidden;
     @include row-horizontal-center();
-    // overflow: auto;
+
 
 
     .left-wrapper{
@@ -186,8 +190,11 @@ export default {
         padding:1rem;
         width:100%;
         height:100%;
+        // height:auto;
+        // min-height:100vh;  
         display: flex;
         flex-direction: column;
+         overflow: hidden;
 
         @media(min-width:320px){
             padding:1rem;
@@ -362,17 +369,18 @@ export default {
 
         .lower-wrapper{
            position: relative;
-           height:auto;
-           overflow: scroll;
-
-        
-
+            overflow: hidden;
+        //    height:auto;
+            width:100%;
+            height:100%;
 
             .content{
                 position: relative;
-                overflow: auto;
+                // overflow: auto;
                 width:100%;
                 height: 100%;
+               
+                overflow: scroll;
                 opacity:0;
                 transition:opacity 1s 1s;
   
@@ -386,9 +394,8 @@ export default {
                     }
                 }
                 .bottom-side{
-                    font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
-                    // display: flex;
-                    // gap:4rem;
+                    position: relative;
+                    font-family:'Lucida Sans';
                 
                     div {
                         margin-top:2rem;
@@ -427,48 +434,53 @@ export default {
         display: none;
   
 
-        @media(min-width:1024px) and (max-height:1024px){
-            display:unset;
-        }
+        // @media(min-width:1024px) and (max-height:1024px){
+        //     display:unset;
+        // }
         .vidoe{
-            width:100%;
-            height: 100%;
-            background:rgb(255, 255, 255);
-            text-align: right;
+            // width:100%;
+            // height: 100%;
+            // background:rgb(255, 255, 255);
+            // text-align: right;
             
             video{
-                height:100%;   
-                object-fit: cover;
+                // height:100%;   
+                // object-fit: cover;
       
             }
         }
 
         .img{
-            width: 100%;
-            height: 100%;
+            // width: 100%;
+            // height: 100%;
 
             img{
-                height: 100%;
-                width:100%;
-                object-fit: cover;
+                // height: 100%;
+                // width:100%;
+                // object-fit: cover;
             }
         }      
     }
 }
 
+
+
 .rotated .space .box .face1 .section,
 .rotated .section{
-    
+
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+
 
     .left-wrapper{
-
         .upper-wrapper{
             @media(min-width:560px){
                 margin-bottom: 20px;
             }
-            @media(min-width:560px){
-                margin-bottom: 70px;
-            }
+            // @media(min-width:560px){
+            //     margin-bottom: 70px;
+            // }
            
             .left-side{
               
@@ -565,7 +577,7 @@ export default {
                     width:43%;
                 }
                 @media(min-width:1000px){
-                    width:40%;
+                    width:36%;
                 }
                 @media(min-width:1300px){
                     width:29%;
@@ -602,24 +614,18 @@ export default {
                 height: 100%;
                 opacity:0;
                 transition:opacity 1s 1s;
-                overflow: scroll;
+         
 
                 .left-side{
+                    span{
+                        @media(min-width:560px){
+                            @include contentFontSetting_320px();
+                        }
 
-
-                    @include contentFontSetting_320px();
-
-     
-                    @media(min-width:1000px){
-                        @include contentFontSetting_760px()
+                        @media(min-width:1000px){
+                            @include contentFontSetting_760px()
+                        }
                     }
-                    // @media(min-width:1024px){
-                    //     // font-size: 1.3rem;
-                    //     font-size: 0.9rem;
-                    // }
-
-                    
-
                 }
                 .bottom-side{
                     div {}
@@ -634,10 +640,21 @@ export default {
     }
     .right-wrapper{
         @media(min-width: 560px){
-            display: unset;
-            max-width:700px;
+
+            // border:red thin solid;
+            position: relative;
             width:55%;
-            height: 100%;
+
+            height:100vh;  
+            
+            display: flex;
+            flex-direction: column;
+            justify-content: start;
+
+            max-width:700px;
+            // max-height:100vh;
+            
+            // height: 100vh;
             z-index: 2;
             // @media(min-width:1024px) and (max-height:1024px){
             //     display:unset;
@@ -649,6 +666,7 @@ export default {
         // }
         .vidoe{
             @media(min-width: 560px){
+                position: relative;
                 width:100%;
                 height: 100%;
                 background:rgb(255, 255, 255);
@@ -657,7 +675,8 @@ export default {
             
             video{
                 @media(min-width: 560px){
-                    height:100%;   
+                    // width:100%;  
+                    height:100%; 
                     object-fit: cover;
                 }
       

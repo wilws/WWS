@@ -222,7 +222,8 @@ export default {
 .slot2-wrapper{
     position: relative;
     width:100%;
-    height:100%;
+    min-height: 100vh;
+    // height:100%;
     padding: 1rem;
     background-color: black;
     color: white;
@@ -349,6 +350,9 @@ export default {
 // Slot 2 (Horizontal)
 
 #web-project-2.rotated div div div.face4 .slot2-wrapper{
+    @media(min-width:560px){
+        padding:1rem 2rem;
+    }
     
     .background-logo{}
 
@@ -439,7 +443,7 @@ export default {
     
     position: relative;
     width:100%;
-    height:100%;
+    min-height: 100vh;
     padding: 1rem;
     background-color: black;
     color: white;

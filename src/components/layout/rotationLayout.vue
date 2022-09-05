@@ -45,21 +45,10 @@ export default {
         this.hasSlot2 = (this.$slots.slot2) ? true:false;
         this.hasSlot3 = (this.$slots.slot3) ? true:false;
         this.hasSlot4 = (this.$slots.slot4) ? true:false;
-
-        
         this.buttonVisibilityController();
-
-        
-
     },
     mounted(){
-
-
-
-        
-
-        // Responsive Setting
-        // this.resizeAdjustor();                          
+        // Responsive Setting                       
         window.addEventListener("resize",this.resizeAdjustor);    // Always ready to trigger "resize()" when width change. 
 
    },
@@ -94,6 +83,7 @@ export default {
         mainScrollBarLocker(n){
             if(n){
                 document.querySelector('html').style.overflow = 'hidden';
+                
             } else {
                 document.querySelector('html').style.overflow = 'scroll';
             }
@@ -118,11 +108,6 @@ export default {
                 '-270':'face3',
             }
             document.querySelectorAll(allfaces).forEach((f)=>{
-                // f.style.visibility = 'visible';
-                // if (!f.classList.contains(faces[this.rotateDeg])){
-                //      f.style.visibility = 'hidden';
-                // } 
-
                 f.style.pointerEvents = 'unset';
                 if (!f.classList.contains(faces[this.rotateDeg])){
                      f.style.pointerEvents = 'none';
@@ -130,9 +115,7 @@ export default {
             })
         },
 
-        // lockAllChildNodes(n,childnodes){
-        //     // childNodes.forEach((c))
-        // }
+  
 
         rotateController(){
             const vw = Math.max(document.documentElement.clientWidth || 0, window.innerWidth || 0);
@@ -243,7 +226,9 @@ $translateDistanceRight : $boxWidth/2;
 .space{
     position: relative;
     width:100%;
-    height:100%;
+    // height:100%;
+    height:auto;
+    min-height: 100vh;
     background-color: rgb(236, 231, 231);
     perspective: $perspective;
     @include vertical-horizontal-center();
@@ -344,7 +329,11 @@ $translateDistanceRight : $boxWidth/2;
 .box{
     position:relative;
     width:$boxWidth;
-    height:$boxHeight;
+    // height:$boxHeight;
+    // height:100%;
+
+    min-height: 100vh;
+    height:auto;
     // transform: translateZ(-$translateDistanceFront) rotateY(-20deg);
     transform: translateZ(-$translateDistanceFront);
     transform-style: preserve-3d;
@@ -357,8 +346,12 @@ $translateDistanceRight : $boxWidth/2;
         margin: 0;
         top:0;
         left:0;
+      
         width:100%;
         height:100%;
+        // height:100vh;
+        // height:100%;
+        // min-height: 100vh;
         transform-origin: center;
         @include vertical-horizontal-center();
     }

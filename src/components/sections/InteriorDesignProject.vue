@@ -281,8 +281,6 @@ export default {
     position:relative;
     width:100%;
     height:100%;
-    // padding:1rem;
-    // background-color: white;
     display: flex;
     flex-direction: column;
     overflow: scroll;
@@ -294,17 +292,15 @@ export default {
 
         width: 100%;
         height:100%;
-        // top:0;
-        // left:0;
-        // border: thin solid red;
         padding: 0.5rem 1rem 1rem 1rem;
-        // @include column-horizontal-center();
         display: flex;
         flex-direction: column;
-        justify-content: center;
-
-
-        justify-content: center;
+        // justify-content: center;
+        // justify-content: start;
+         @media(min-width:375px){
+             margin-top:1rem;
+             justify-content: start
+         }
         @media(min-width:1024px){
             max-width:400px;
             width:40%;
@@ -328,19 +324,14 @@ export default {
             }
             .content{
                 // border: thin solid red;
-                    font-family: $primary-font;
-                    color:$grey ;
-                    // font-size: 0.8rem;
-                    // letter-spacing: 0rem ;
-                    // line-height: 1.2rem;
-                    // text-align: center;
-                    @media(min-width:320px){
-                        @include contentFontSetting_320px();
-                    }
-                    @media(min-width:760px){
-                        @include contentFontSetting_760px();
-                    }
-                
+                font-family: $primary-font;
+                color:$grey ;
+                @media(min-width:320px){
+                    @include contentFontSetting_320px();
+                }
+                @media(min-width:760px){
+                    @include contentFontSetting_760px();
+                }
             }
         }
     }
@@ -749,7 +740,7 @@ export default {
 
         position: absolute;
         width: 70%;
-        bottom:0;
+        bottom:3rem;
         left:0;
         color: #ffffffbd;
 

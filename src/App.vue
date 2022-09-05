@@ -29,6 +29,8 @@ import GraphicDesignProject from './components/sections/GraphicDesignProject.vue
 import InteriorDesignProject from './components/sections/InteriorDesignProject.vue';
 import FinalPage from './components/sections/FinalPage.vue';
 
+import screenSizeDetection from "./mixins/screenSizeDetection.vue";
+
 
 export default {
   name: 'App',
@@ -44,7 +46,14 @@ export default {
     InteriorDesignProject,
     FinalPage,
     
+  },
+  mixins:[screenSizeDetection],
+  mounted(){
+      window.addEventListener('resize',()=>{
+          this.defaultBoxes();
+      });
   }
+  
 }
 </script>
 
@@ -59,12 +68,12 @@ export default {
     outline:none;
     box-sizing:border-box;
     text-decoration:none;
-    scrollbar-width: none;  
+    // scrollbar-width: none;  
 }
 
-*::-webkit-scrollbar {
-  display: none;
-}
+// *::-webkit-scrollbar {
+//   display: none;
+// }
 
 html{
     // font-size:62.5%;
@@ -73,16 +82,14 @@ html{
 
 
 .container{
-  height:100vh;
-  width:100vw;
-  // min-height:568px;
-  min-width:320px;
   background:rgb(100, 83, 83);
 }
 
 section{
-  height:100%;
-  width:100%;
+  position:relative;
+  width:100vw;
+  min-height:100vh;
+  height:auto;
   background-color: green;
   overflow: hidden;
 }

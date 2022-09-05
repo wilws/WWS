@@ -52,7 +52,7 @@ export default {
     },
     methods:{
         menuController(){
-            this.DefaultBoxes();
+            this.defaultBoxes();
             this.showMenu();
             // document.querySelector(".menu").classList.toggle('close');
             // document.querySelector(".menu-button").classList.toggle('close');
@@ -70,12 +70,6 @@ export default {
             document.querySelector(".menu-button").classList.toggle('close');
             this.menuOpen = !this.menuOpen;
         },
-        DefaultBoxes(){
-            // turn all boxes back to the first page
-            document.querySelectorAll(".firstPage").forEach((e)=>{
-                e.click();
-            });
-        }
     },
     mounted(){
         document.querySelector(".menu-button").addEventListener("mouseover",() => {

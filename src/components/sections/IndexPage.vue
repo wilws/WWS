@@ -55,33 +55,41 @@ export default {
 
 .index-page{
     position:relative;
-    width:100%;
-    height:100%;
+    width:100vw;
     background-color: rgb(255, 255, 255);
 
     .img-wrapper{
         position: relative;
         width:100%;
         height:45%;
-        // min-height:300px;
+
         
         .img{
-            position: absolute;
-            width:80%;
+            // position: absolute;
+            position:relative;
+            width:100%;
             height:100%;
+           
+        
             top:0;
             right:0;
+            // border: red thin solid;
+    
             overflow: hidden;
 
-            @media (min-width:760px) {
-                width:60%;
-            }
+
  
             img{
-                width: 100%;
+                width: 80%;
                 height:100%;      
+                // border: red thin solid;
+                float:right;
+                
                 object-fit:cover;
                 overflow: hidden;
+                @media (min-width:760px) {
+                    width:60%;
+                }
             }
         }
 
@@ -252,14 +260,14 @@ export default {
 
 // Rotated style
 .index-page.rotated{
-    @media(min-width:568px){
+    @media(min-width:560px){
         display:flex;
         flex-direction: row-reverse;
     }
     .img-wrapper{
         @media(min-width:568px){
             width:80%;
-            height: 100%;
+            height: 100vh;
         }
         .img{
             @media(min-width:568px){
@@ -376,7 +384,13 @@ export default {
                 position: relative;
                 height:100%;
                 overflow: scroll;   
-            }        
+            
+                @include contentFontSetting_320px();
+            }
+            @media(min-width:1000px){
+                // height:calc(100% - $aboveIntroHeight_760px);
+                @include contentFontSetting_760px();
+            }      
         }
     }
 }
