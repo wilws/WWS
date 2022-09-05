@@ -119,9 +119,14 @@ export default {
                 line-height: 2.9rem;
             }
             @mixin nameFontSetting_540px{  
-                bottom: -7%;
+                bottom: -2%;
                 right: 46%;
             }
+            @mixin nameFontSetting_680px{  
+                bottom: -0.5%;
+                font-size: 2.6rem;
+                right: 46%;
+            }      
 
             @mixin nameFontSetting_760px{
                 bottom:-7%;
@@ -158,6 +163,7 @@ export default {
             text-align: right;
             text-shadow: 10px 10px 10px #d4d1d1;
             background-color: rgba(256,256,256,0.5);
+            @include nameFontSetting_320px();
 
             @media (min-width:320px) {
                 @include nameFontSetting_320px();
@@ -173,6 +179,10 @@ export default {
 
             @media (min-width:540px) {
                 @include nameFontSetting_540px();
+            }
+
+            @media (min-width:680px) {
+                @include nameFontSetting_680px();
             }
 
             @media (min-width:760px) {
@@ -232,6 +242,7 @@ export default {
             color: rgb(0, 0, 0);
             height:100%;
             overflow: scroll;
+            @include contentFontSetting_320px();
 
             @media(min-width:320px){
                 @include contentFontSetting_320px();
@@ -285,6 +296,8 @@ export default {
         }
 
         .name{
+ 
+
             @mixin nameFontSetting_h_560px{  
                 top:2%;
                 left:unset;
@@ -298,7 +311,8 @@ export default {
                 height: auto;
                 background-color: transparent;
         
-            }
+            }      
+            
 
             @mixin nameFontSetting_h_660px{
                 top: 1.4%;
@@ -337,6 +351,7 @@ export default {
             @media (min-width:560px) {
                 @include nameFontSetting_h_560px();
             }
+
 
             @media (min-width:660px) {
                 @include nameFontSetting_h_660px();

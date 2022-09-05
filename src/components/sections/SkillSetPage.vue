@@ -572,6 +572,11 @@ export default {
                     display: none;
                 }
 
+                @media(max-height:484px){
+                     margin-top:0rem;
+                    margin-bottom:0rem;
+                }
+
                 button{
                     @mixin buttonSetting_320px {
                         font-size:.6rem;
@@ -601,6 +606,7 @@ export default {
         .cards-wrapper{      
             width: calc(100vw * 4);
             height: $cardsWrapperHeight ;
+            // min-height: 700px;
             display: flex;
             justify-content: left;
             align-items: center;
@@ -611,6 +617,7 @@ export default {
                 width: 100%;
                 justify-content: space-around;
             }
+
         }
 
         
@@ -619,10 +626,16 @@ export default {
             $cardWidth_450px:45vw;
             $cardWidth_1020px:55vw;
 
+            min-height: 220px;
+            min-width: 137px;
+            height:100%;
+          
+
             @mixin cardSizeingSetting_320px{
                 width:$cardWidth_320px;
                 height:90%;
                 max-height: 600px;
+                
                 margin-right:calc((100vw - $cardWidth_320px));   
                 .card:nth-child(1){
                     margin-left:calc((100vw - $cardWidth_320px)/1.5);
@@ -668,6 +681,8 @@ export default {
             .card{
                 width: 100%;
                 height: 100%;
+                
+
                 border: thin solid rgba(238, 235, 235, .5);
                 border-radius: 1rem;
                 box-shadow: 2rem 1.5rem .8rem #4442424f;
@@ -682,6 +697,10 @@ export default {
                 .card-title{
                     margin:3rem;
                     @include column-horizontal-center(); 
+                    @media(min-width:1020px){
+                        margin:6rem;
+                    }
+                                       
 
                     
                     h3{
@@ -694,6 +713,10 @@ export default {
                         letter-spacing: 0.3rem;
                         text-align: center;
                         padding:0;
+
+                        @media(min-width:1020px){
+                            font-size: 2.5rem;
+                        }
                     }
                     h4{
                         // @extend h3;
@@ -706,12 +729,16 @@ export default {
                         color: $grey;
                         text-align: center;
                         padding:0;
+                        @media(min-width:1020px){
+                            font-size: 1.9rem;
+                        }
                     }
                 }
 
                 .card-tech-chart{
                     width:100%;
                     height: calc(100% - 7rem);
+                     
                     // border:thin solid red;
                     overflow: hidden;
                     @include column-horizontal-center(); 
@@ -730,10 +757,17 @@ export default {
                             height: 100%;
                             width:2rem;
                             text-align: center;
+                            @media(min-width:1020px){
+                                width:4.5rem;
+                            }
 
                             .tech-icon{
                                 width:80%;
                                 object-fit: cover;
+                                @media(min-width:1020px){
+                                   width:100%;
+                                }
+
                             }
                         }
                         .right-side{
@@ -741,6 +775,9 @@ export default {
                             width:100%;
                             height:100%;
                             padding-left: 1rem;
+                            @media(min-width:1020px){
+                                padding-left: 2rem;
+                            }
                             
                             .tech-name{
                                 // border:thin solid orange;
@@ -750,6 +787,9 @@ export default {
                                 font-size:.7rem;
                                 color: $grey;
                                 letter-spacing: .2rem;
+                                @media(min-width:1020px){
+                                     font-size:1.5rem
+                                }
                             }
                             .tech-bar-wrapper{
                                 // border:thin solid orange;
@@ -850,6 +890,7 @@ export default {
 
         .card-switcher{
             display: none;
+
             button{}
         }
     }
@@ -1005,6 +1046,9 @@ export default {
                     }
                     .tech-wrapper{
                         .left-side{   
+                            @media(min-width:1300px){
+                                width:2.5rem;
+                            }
                             .tech-icon{
                                 @media(min-width:560px){
                                     // min-height: 20px;
