@@ -90,7 +90,7 @@ section{
   width:100vw;
   min-height:100vh;
   height:auto;
-  background-color: green;
+  background-color: transparent;
   overflow: hidden;
 }
 

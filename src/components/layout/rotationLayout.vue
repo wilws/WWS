@@ -334,7 +334,7 @@ $translateDistanceRight : $boxWidth/2;
 
     min-height: 100vh;
     height:auto;
-    // transform: translateZ(-$translateDistanceFront) rotateY(-20deg);
+    // transform: translateZ(-$translateDistanceFront) rotateY(-180deg);
     transform: translateZ(-$translateDistanceFront);
     transform-style: preserve-3d;
     transform-origin: center;

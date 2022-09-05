@@ -846,6 +846,7 @@ export default {
         margin-bottom:5rem;
         background-color: white;
         transform-style: preserve-3d;
+         -webkit-transform-style: preserve-3d;
         // z-index: 1;
 
 
@@ -858,12 +859,14 @@ export default {
                 position:absolute;
                 left:0;
                 top:0;
-                width:100%;
-                height:100%;
+                width:101%;
+                height:101%;
                 background-color: rgb(255, 255, 255);
                 // border:red solid thin;
                 z-index: 0;
                 transform:translateZ(-0.01rem);
+                -webkit-transform:translateZ(-0.01rem);
+                
             }
         }
         
@@ -899,6 +902,7 @@ export default {
     .col.col-1{
        //  border:rgb(243, 10, 10) solid thin;
          z-index: 3;
+
         .img{
             // margin-top:3rem;
             width:100%;
@@ -908,6 +912,7 @@ export default {
                 object-fit: cover;
             }
         }
+
 
 
 
@@ -922,15 +927,23 @@ export default {
             background-color: transparent;
             z-index: 4;
             transform:translateZ(1rem);
+            -webkit-transform:translateZ(1rem);
         }
     }
 
     @keyframes folding {
         0%{
-            transform: rotateY(180deg);
+            // visibility: hidden;
+            // opacity: 0;
+            transform: rotateY(90deg);
+            -webkit-transform:rotateY(90deg);
         }
         100%{
+            // visibility: visible;
+            // opacity: 1;
             transform: rotateY(0deg);
+             -webkit-transform:rotateY(0deg);
+        
         }
                 
     }
@@ -943,7 +956,12 @@ export default {
             flex-direction: column-reverse;
             justify-content: start;
             transform-origin: left;
-            transform: rotateY(180deg);
+            transform: rotateY(90deg);
+             -webkit-transform-origin: left;
+             -webkit-transform: rotateY(90deg); 
+               
+  
+            
             &.animation{
                 animation: folding 2s forwards;
             }
@@ -959,6 +977,7 @@ export default {
             background-color: transparent;
             z-index: 2;
             transform:translateZ(1rem);
+             -webkit-transform:translateZ(1rem);
         }  
 
 
@@ -1008,7 +1027,10 @@ export default {
 
         @media(min-width:1024px){
             transform-origin: left;
-            transform: rotateY(180deg);
+            transform: rotateY(90deg);
+
+            -webkit-transform-origin: left;
+            -webkit-transform: rotateY(90deg);
 
             &.animation{
                 animation: folding 2s 1s forwards;
