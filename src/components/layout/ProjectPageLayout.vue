@@ -228,6 +228,7 @@ export default {
                 h1{
            
                     position: relative;
+  
                     width:100%;
                     font-family: $secondary-font;
                     font-size:1.1rem;
@@ -254,6 +255,7 @@ export default {
 
                 h3{
                     position: relative;
+    
                     width:100%;
                     font-size: 0.6rem;
                     font-weight: 500;
@@ -288,6 +290,7 @@ export default {
                     position: relative;     
                     text-align: center;
                     border-radius: 1rem;
+                    border: thin solid transparent;
                     color:white;
                     cursor: pointer;        
                     transform:translateX(-200%);
@@ -474,6 +477,10 @@ export default {
 
 
     .left-wrapper{
+         @media(min-width:560px){
+             width:70%;
+         }
+
         .upper-wrapper{
             @media(min-width:560px){
                 margin-bottom: 20px;
@@ -577,7 +584,7 @@ export default {
                     width:43%;
                 }
                 @media(min-width:1000px){
-                    width:36%;
+                    width:29%;
                 }
                 @media(min-width:1300px){
                     width:29%;
@@ -643,7 +650,7 @@ export default {
 
             // border:red thin solid;
             position: relative;
-            width:55%;
+            width:50%;
 
             height:100vh;  
             
@@ -672,6 +679,10 @@ export default {
                 background:rgb(255, 255, 255);
                 text-align: right;
             }
+
+            // @media(min-width: 1000px){
+            //     width:80%;
+            // }
             
             video{
                 @media(min-width: 560px){
@@ -684,13 +695,17 @@ export default {
         }
 
         .img{
-            width: 100%;
-            height: 100%;
+            @media(min-width: 560px){
+                width: 100%;
+                height: 100%;
+            }
 
             img{
-                height: 100%;
-                width:100%;
-                object-fit: cover;
+                @media(min-width: 560px){
+                    height: 100%;
+                    width:100%;
+                    object-fit: cover;
+                }
             }
         }
 

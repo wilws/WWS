@@ -156,6 +156,7 @@ export default {
             z-index: 1;
             padding: 0rem;
             text-align: right;
+            text-shadow: 10px 10px 10px #d4d1d1;
             background-color: rgba(256,256,256,0.5);
 
             @media (min-width:320px) {

@@ -223,13 +223,11 @@ export default {
     position: relative;
     width:100%;
     min-height: 100vh;
-    // height:100%;
     padding: 1rem;
     background-color: black;
     color: white;
     z-index: 1;
     @include column-horizontal-center();
-    // border:red solid thin;
     overflow: scroll;
 
     @media(min-width:800px){
@@ -291,6 +289,7 @@ export default {
                 width:100%;
                 font-family: $primary-font;
                 color:white;
+                @include contentFontSetting_320px;
                 
                 padding:0;
 
@@ -407,7 +406,7 @@ export default {
             }
 
             p{
-                 @media(min-width:560px){
+                @media(min-width:500px){
                     @include contentFontSetting_320px();
                 }
                 @media(min-width:1020px){
@@ -508,9 +507,10 @@ export default {
                 p{
                     width:100%;
                     color:white;
-                    @media(min-width:320px){
-                        @include contentFontSetting_320px;
-                    }
+                    @include contentFontSetting_320px;
+                    // @media(min-width:320px){
+                    //     @include contentFontSetting_320px;
+                    // }
                     @media(min-width:760px){
                         @include contentFontSetting_760px;
                     }
@@ -611,7 +611,7 @@ export default {
                 }
 
                 p{
-                    @media(min-width:560px){
+                    @media(min-width:500px){
                         @include contentFontSetting_320px();
                     }
                     @media(min-width:1020px){

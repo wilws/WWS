@@ -997,6 +997,11 @@ export default {
                     @media(min-width:560px){
                         // height:100%;
                         overflow: unset;
+                        gap:0%;
+                    }
+                    @media(min-width:700px){
+                       
+                        gap:5%;
                     }
                     .tech-wrapper{
                         .left-side{   
