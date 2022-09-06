@@ -76,16 +76,20 @@ export default {
         },
 
         resizeAdjustor(){
+            //to move the box to correct axis when rotate
             document.querySelector(this.boxClass).style.transition = "transform 0s";   // When resize browser, we dont what the delay effect. It stop the transition delay when resize
             this.rotateController();                                          
         },
 
         mainScrollBarLocker(n){
+            //  lock the bar when box is rotated
             if(n){
-                document.querySelector('html').style.overflow = 'hidden';
+                // document.querySelector('body').style.overflow = 'hidden';
+                document.getElementsByTagName('body')[0].style.overflow = 'hidden';
                 
             } else {
-                document.querySelector('html').style.overflow = 'scroll';
+                // document.querySelector('body').style.overflow = 'scroll';
+                document.getElementsByTagName('body')[0].style.overflow = 'visible';
             }
         },
 
@@ -135,6 +139,7 @@ export default {
             } else {
                 this.mainScrollBarLocker(true)     // lockscroll bar when go to project details
                 this.animationClassController(this.rotateDeg);
+               
             }
         },
 
@@ -204,8 +209,34 @@ export default {
                     e.classList.remove('show');
                 }
             });
-            
-            
+        },
+
+        scrollToBottom(id){
+            // For testing purpose
+
+
+            // console.log( 'scrolToBottom');
+            console.log( id);
+            // id = '.slot2-wrapper'
+            // const element = document.querySelector(id);
+
+            // element.onwheel= ()=>{
+            //     console.log('hit')
+                
+            // }
+
+            // element.scrollTop = element.scrollToBottom;
+
+            // let dis = 0
+            // window.onwheel = function(){ 
+            //     console.log('hit')
+            //  }
+            // window.addEventListener("wheel",()=>{
+                // console.log('hit')
+                // dis += 10
+                // element.scrollTo(0,10000)
+            // });
+
         }
     }
 
@@ -226,24 +257,27 @@ $translateDistanceRight : $boxWidth/2;
 .space{
     position: relative;
     width:100%;
-    // height:100%;
     height:auto;
     min-height: 100vh;
-    background-color: rgb(236, 231, 231);
     perspective: $perspective;
+    -webkit-perspective: $perspective;
+    background-color: greenyellow;
+    // transform-style: preserve-3d;
     @include vertical-horizontal-center();
 }
 
 @mixin buttonStyle {
         position:absolute;
-        border:none;
+        border:solid thin transparent;
+        border-radius: 50%;
         top:50%;
         background-color: transparent;
         width:1.5rem;
-        // height:10%;
-        z-index: 999;
+        z-index: 9;
         transition-property:background-color transform ;
         transition-duration: .5s;
+        -webkit-transition-property:background-color transform ;
+        -webkit-transition-duration: .5s;
         cursor: pointer;
 
         @media(min-width:768px){
@@ -275,18 +309,23 @@ $translateDistanceRight : $boxWidth/2;
     
     &:hover{
         background-color: rgba(255, 255, 255, 0.1);
-        transform:scale(1.5);
+        transform:scale(1.5) translateY(-50%);
+        -webkit-transform:scale(1.5) translateY(-50%);
+        transform-origin: center;
     }
 }
 
 .forward{
     @include buttonStyle();
     transform:rotateZ(180deg) translateZ(1rem) translateY(-50%);
+    -webkit-transform:translateZ(1rem) translateY(-50%) rotateZ(180deg) ;
     right:0rem;
     
     &:hover{
+        transform-origin: center;
         background-color: rgba(255, 255, 255, 0.1);
-        transform:rotateZ(180deg) scale(1.5);
+        transform:scale(1.5) translateY(-50%) rotateZ(180deg) ;
+        -webkit-transform:scale(1.5) translateY(-50%) rotateZ(180deg) ;
     }
 }
 
@@ -301,6 +340,9 @@ $translateDistanceRight : $boxWidth/2;
     transform:translateZ(1rem);
     transition-property:background-color transform ;
     transition-duration: .5s;
+    -webkit-transform:translateZ(1rem);
+    -webkit-transition-property:background-color transform ;
+    -webkit-transition-duration: .5s;
     font-family: $tertiary-font;
     cursor: pointer;
 
@@ -321,6 +363,8 @@ $translateDistanceRight : $boxWidth/2;
     &:hover{
         background-color: rgba(255, 255, 255, 0.1);
         transform: scale(1.1);
+        -webkit-transform: scale(1.1);
+        
     }
 }
 
@@ -334,10 +378,14 @@ $translateDistanceRight : $boxWidth/2;
 
     min-height: 100vh;
     height:auto;
-    // transform: translateZ(-$translateDistanceFront) rotateY(-180deg);
+    
     transform: translateZ(-$translateDistanceFront);
     transform-style: preserve-3d;
     transform-origin: center;
+    -webkit-transform: translateZ(-$translateDistanceFront);
+    -webkit-transform-style: preserve-3d;
+    -webkit-transform-origin: center;
+    // transform: translateZ(-$translateDistanceFront) rotateY(-90deg);
 
 
     @mixin setting{
@@ -346,39 +394,40 @@ $translateDistanceRight : $boxWidth/2;
         margin: 0;
         top:0;
         left:0;
-      
         width:100%;
         height:100%;
-        // height:100vh;
-        // height:100%;
-        // min-height: 100vh;
         transform-origin: center;
+        -webkit-transform-origin: center;
         @include vertical-horizontal-center();
     }
 
     .face1{
         @include setting();
         transform: translateZ($translateDistanceFront);
-        background-color: white;
+        -webkit-transform: translateZ($translateDistanceFront);
+        // background-color: white;
         // z-index:1;
     }
     .face2{
         @include setting();
         transform: translateZ($translateDistanceBack) rotateY(180deg);
-        background-color: white;
+        -webkit-transform: translateZ($translateDistanceBack) rotateY(180deg);
+        // background-color: white;
         //  z-index:4;
     }
     .face3{
         @include setting();
         transform: translateX($translateDistanceLeft) rotateY(-90deg) ;
-        background-color: white;
+        -webkit-transform: translateX($translateDistanceLeft) rotateY(-90deg) ;
+        // background-color: white;
         //  z-index:4;
     }
     .face4{
         @include setting();
         // color:white;
         transform: translateX($translateDistanceRight) rotateY(90deg) ;
-        background-color: white;
+        -webkit-transform: translateX($translateDistanceRight) rotateY(90deg) ;
+        // background-color: white;
         // z-index:1;
     }
 }

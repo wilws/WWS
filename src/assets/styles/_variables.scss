@@ -9,7 +9,7 @@ $quaternary-font: 'Courier Prime', monospace;
 
 
 @mixin contentFontSetting_320px{
-    font-family: "Nanum Myeongjo", serif;
+    font-family: $primary-font;
     text-align: justify;
     font-size: 0.8rem;
     line-height: 1.2rem;
@@ -17,7 +17,7 @@ $quaternary-font: 'Courier Prime', monospace;
 }
 
 @mixin contentFontSetting_760px{
-    font-family: "Nanum Myeongjo", serif;
+    font-family: $primary-font;
     text-align: justify;
     font-size: 1.2rem;
     line-height: 2.1rem;

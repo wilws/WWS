@@ -28,13 +28,10 @@
 
 <script>
 import MenuItem from "../layout/menuItemLayout.vue";
-import screenSizeDetection from "../../mixins/screenSizeDetection.vue";
 export default {
     components:{
         MenuItem
     },
-    mixins:[screenSizeDetection],
-
     data(){
         return{
             id: "#menu",
@@ -61,29 +58,24 @@ export default {
 
             // lock the scroll bar when menu open
             if (this.menuOpen) {
-                console.log('in controller true')
-                console.log(document.getElementsByTagName('body')[0]);
                 document.getElementsByTagName('body')[0].style.overflow = 'hidden';
             } else {
-                console.log('in controller false')
                 document.getElementsByTagName('body')[0].style.overflow = 'visible';
             }
         },
         showMenu(){
-            console.log('here')
-            console.log('before.menuOpen',this.menuOpen);
             document.querySelector(".menu").classList.toggle('close');
             document.querySelector(".menu-button").classList.toggle('close');
             this.menuOpen = !this.menuOpen;
-            console.log('after.menuOpen',this.menuOpen);
         },
     },
     mounted(){
         document.querySelector(".menu-button").addEventListener("mouseover",() => {
             this.menuController();
-            console.log('mouseover')
             // this.showMenu();
         });
+
+        // [ Global Mixin function ]
         // Check if the device is horizontally rotated 
         // if true, add class "rotated" to the <section> tag
         // We treat the style of the horizontal screen separately

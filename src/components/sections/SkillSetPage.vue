@@ -355,9 +355,8 @@
 
 
 <script>
-import screenSizeDetection from "../../mixins/screenSizeDetection.vue";
+
 export default {
-    mixins:[screenSizeDetection],
 
     data(){
         return {
@@ -542,7 +541,6 @@ export default {
                 @media (min-width:1300px){
                     @include h3FontSetting_1300px();
                 }
-    
             }
 
             .card-switcher{
@@ -626,8 +624,8 @@ export default {
             $cardWidth_450px:45vw;
             $cardWidth_1020px:55vw;
 
-            min-height: 220px;
-            min-width: 137px;
+            min-height: 273px;
+            min-width: 182px;
             height:100%;
           
 
@@ -924,7 +922,7 @@ export default {
             @mixin cardSizeingSetting_h_560px{
                 width:$cardWidth_h_560px;
                 height:85%;
-                max-height: 500px;
+                max-height: 350px;
             }
 
             @media(min-width: 560px){
@@ -938,12 +936,16 @@ export default {
                 }
             }
 
-            @media(min-width:1020px){
+            @media(min-width:1000px){
                 max-height:416px;
                 max-width:215px;
+                min-height:416px;
+                min-width:215px;
             }
 
             @media(min-width:1300px){
+                min-height: 497px;
+                min-width: 292px;
                 max-height: 497px;
                 max-width: 292px;
             }
@@ -1046,7 +1048,7 @@ export default {
                     }
                     .tech-wrapper{
                         .left-side{   
-                            @media(min-width:1300px){
+                            @media(min-width:1020px){
                                 width:2.5rem;
                             }
                             .tech-icon{

@@ -1,8 +1,8 @@
 <template>
         
-    <div class="imageInFullScreen">
+    <div class="imageInFullScreen" @click="screenController()">
         <div class="content-wrapper">
-            <button class="closeScreenBtn" @click="screenController()">Close Picture</button>
+            <!-- <button class="closeScreenBtn" @click="screenController()">Close Picture</button> -->
             <div class="image-Wrapper">
                 <img v-if="!!imgUrl" :src="imgUrl">
             </div>

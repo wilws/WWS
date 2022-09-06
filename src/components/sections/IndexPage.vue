@@ -30,23 +30,23 @@
 </template>
 
 <script>
-import screenSizeDetection from "../../mixins/screenSizeDetection.vue";
 export default {
-    mixins:[screenSizeDetection],
+    data(){
+        return {
+            id: "#index",
+        }
+    },
+
     mounted(){
+        // [ Global Mixin function ]
         // Check if the device is horizontally rotated 
         // if true, add class "rotated" to the <section> tag
         // We treat the style of the horizontal screen separately
         this.deviceRotationResponse(this.id)
         window.addEventListener('resize',()=>{
-            this.deviceRotationResponse(this.id);
+            this.deviceRotationResponse(this.id);          
         });
     },
-    data(){
-        return {
-            id: "#index"
-        }
-    }
 }
 </script>
 
@@ -57,6 +57,7 @@ export default {
     position:relative;
     width:100vw;
     background-color: rgb(255, 255, 255);
+    @include contentFontSetting_320px();
 
     .img-wrapper{
         position: relative;
@@ -220,11 +221,8 @@ export default {
             padding:0 3rem 3rem 3rem;
         }
 
-
-
         .above-intro{
             position: relative;
-      
             @media(min-width:320px){
                 margin-bottom:34px;
             }
@@ -239,55 +237,46 @@ export default {
 
         .introduction{
             position: relative;
-            color: rgb(0, 0, 0);
+            color: black;
             height:100%;
             overflow: scroll;
-            @include contentFontSetting_320px();
 
             @media(min-width:320px){
                 @include contentFontSetting_320px();
             }
             @media(min-width:760px){
-                // height:calc(100% - $aboveIntroHeight_760px);
                 @include contentFontSetting_760px();
             }
-            // @media(min-width:1000px){
-            //     height:calc(100% - $aboveIntroHeight_1000px);
-            // }
         }
     }
-
-    // .contact{
-    //     position:absolute;
-    //     right:5rem;
-    //     bottom:5rem;
-    //     color: rgb(141, 139, 139);
-    //     font-family: $secondary-font;
-    //     font-size: 1.4rem;
-    //     letter-spacing: 0.3rem;
-    //     text-align: right;
-
-    // }
 }
 
 // Rotated style
+
+$min-width:560px;
 .index-page.rotated{
-    @media(min-width:560px){
+
+
+
+    @media(min-width:500px){   
+        
         display:flex;
         flex-direction: row-reverse;
+
     }
+
     .img-wrapper{
-        @media(min-width:568px){
+        @media(min-width:$min-width){
             width:80%;
             height: 100vh;
         }
         .img{
-            @media(min-width:568px){
+            @media(min-width:$min-width){
                 width:100%;
                 height:100%;
             }
             img{
-                @media(min-width:568px){
+                @media(min-width:$min-width){
                     width:100%;
                     height:100%;
                     object-fit: cover;
@@ -296,14 +285,11 @@ export default {
         }
 
         .name{
- 
-
             @mixin nameFontSetting_h_560px{  
                 top:2%;
                 left:unset;
                 bottom:unset;
                 right:87%;
-                
                 font-size: 1.5rem;
                 letter-spacing: 0.3rem;
                 line-height: 1.8rem;  
@@ -348,7 +334,7 @@ export default {
                 letter-spacing: .7rem;
             }
         
-            @media (min-width:560px) {
+            @media (min-width:$min-width) {
                 @include nameFontSetting_h_560px();
             }
 
@@ -374,12 +360,12 @@ export default {
     }
     .introduction-wrapper{
 
-        @media(min-width:560px){
+        @media(min-width:$min-width){
             height:100%;
         }
       
         .above-intro{
-            @media(min-width:560px){
+            @media(min-width:$min-width){
                 margin-bottom:5rem;
             }
             @media(min-width:660px){
@@ -396,17 +382,19 @@ export default {
 
         }
         .introduction{ 
-            @media(min-width:560px){
+            color: rgb(31, 29, 29);
+            @media(min-width:$min-width){
                 position: relative;
                 height:100%;
                 overflow: scroll;   
             
                 @include contentFontSetting_320px();
+
+                @media(min-width:1000px){
+                    // height:calc(100% - $aboveIntroHeight_760px);
+                    @include contentFontSetting_760px();
+                }      
             }
-            @media(min-width:1000px){
-                // height:calc(100% - $aboveIntroHeight_760px);
-                @include contentFontSetting_760px();
-            }      
         }
     }
 }

@@ -24,12 +24,9 @@
 
 <script>
 
-import ProjectPageLayout from "../layout/ProjectPageLayout.vue";
+
 
 export default {
-    components:{
-        ProjectPageLayout
-    },
     data(){
         return {
             mainTitle : "Web Project 1",
