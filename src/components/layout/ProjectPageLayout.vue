@@ -531,7 +531,7 @@ export default {
                     //     margin-top: -3px;
                     // }
                     @media(min-width:1300px){
-                        font-size: 0.9rem;
+                        font-size: 1.1rem;
                         margin-top: -4px;
                     }
                     // @media(min-width:1500px){
@@ -651,26 +651,13 @@ export default {
             // border:red thin solid;
             position: relative;
             width:50%;
-
             height:100vh;  
-            
             display: flex;
             flex-direction: column;
             justify-content: start;
-
-            max-width:700px;
-            // max-height:100vh;
-            
-            // height: 100vh;
             z-index: 2;
-            // @media(min-width:1024px) and (max-height:1024px){
-            //     display:unset;
-            // }
-        }
 
-        // @media(min-width:1024px) and (max-height:1024px){
-        //     display:unset;
-        // }
+        }
         .vidoe{
             @media(min-width: 560px){
                 position: relative;
@@ -679,11 +666,6 @@ export default {
                 background:rgb(255, 255, 255);
                 text-align: right;
             }
-
-            // @media(min-width: 1000px){
-            //     width:80%;
-            // }
-            
             video{
                 @media(min-width: 560px){
                     // width:100%;  

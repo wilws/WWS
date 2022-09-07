@@ -3,6 +3,7 @@
         <button v-if="rotateDeg > forwardButtonAppearDeg && rotateDeg < 0" class="forward" @click="rotate('forward')"><i  :style="{ color:buttonSetting.backgroundColor}" class="fa-solid fa-angle-left"></i></button>
         <button v-if="rotateDeg < 0"  class="backward" @click="rotate('backward')"><i :style="{ color:buttonSetting.backgroundColor}" class="fa-solid fa-angle-left"></i></button>
         <button v-if="rotateDeg < 0"  class="firstPage" @click="rotate('firstPage')"><i :style="{ color:buttonSetting.backgroundColor}" class="fa-solid fa-house"></i></button>
+    
        <div class="box">
             <div v-if="hasSlot1" class="face face1"><slot name="slot1"></slot></div>
             <div v-if="hasSlot3" class="face face2"><slot name="slot3"></slot></div>
@@ -138,8 +139,7 @@ export default {
                  
             } else {
                 this.mainScrollBarLocker(true)     // lockscroll bar when go to project details
-                this.animationClassController(this.rotateDeg);
-               
+                this.animationClassController(this.rotateDeg);         
             }
         },
 
@@ -211,14 +211,23 @@ export default {
             });
         },
 
-        scrollToBottom(id){
+        scrollButton(id){
             // For testing purpose
 
 
             // console.log( 'scrolToBottom');
             console.log( id);
-            // id = '.slot2-wrapper'
-            // const element = document.querySelector(id);
+            id = '.slot2-wrapper'
+            const element = document.querySelector(id);
+
+            element.addEventListener("scroll",()=>{
+                alert('click')
+                element.scrollTo({
+                    top: 1000,
+                    // left: 100,
+                    behavior: 'smooth'
+                    });
+            });
 
             // element.onwheel= ()=>{
             //     console.log('hit')
@@ -261,7 +270,8 @@ $translateDistanceRight : $boxWidth/2;
     min-height: 100vh;
     perspective: $perspective;
     -webkit-perspective: $perspective;
-    background-color: greenyellow;
+    background-color: transparent;
+    // background-color: green;
     // transform-style: preserve-3d;
     @include vertical-horizontal-center();
 }
@@ -385,7 +395,7 @@ $translateDistanceRight : $boxWidth/2;
     -webkit-transform: translateZ(-$translateDistanceFront);
     -webkit-transform-style: preserve-3d;
     -webkit-transform-origin: center;
-    // transform: translateZ(-$translateDistanceFront) rotateY(-90deg);
+    // transform: translateZ(-$translateDistanceFront) rotateY(-180deg);
 
 
     @mixin setting{
@@ -401,12 +411,23 @@ $translateDistanceRight : $boxWidth/2;
         @include vertical-horizontal-center();
     }
 
+    @mixin pseudoSetting{
+        contain: "";
+        width:100%;
+        height:100%;
+        position:absolute;
+        transition: translateZ(0.1rem);
+        background-color: white;
+    }
+
     .face1{
         @include setting();
         transform: translateZ($translateDistanceFront);
         -webkit-transform: translateZ($translateDistanceFront);
         // background-color: white;
         // z-index:1;
+
+        @include pseudoSetting();
     }
     .face2{
         @include setting();
@@ -414,6 +435,7 @@ $translateDistanceRight : $boxWidth/2;
         -webkit-transform: translateZ($translateDistanceBack) rotateY(180deg);
         // background-color: white;
         //  z-index:4;
+        @include pseudoSetting();
     }
     .face3{
         @include setting();
@@ -421,6 +443,7 @@ $translateDistanceRight : $boxWidth/2;
         -webkit-transform: translateX($translateDistanceLeft) rotateY(-90deg) ;
         // background-color: white;
         //  z-index:4;
+        @include pseudoSetting();
     }
     .face4{
         @include setting();
@@ -429,6 +452,7 @@ $translateDistanceRight : $boxWidth/2;
         -webkit-transform: translateX($translateDistanceRight) rotateY(90deg) ;
         // background-color: white;
         // z-index:1;
+        @include pseudoSetting();
     }
 }
 

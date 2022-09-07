@@ -49,12 +49,12 @@
                         </div>
                         <div class="img" @click="showImageInFullScreen('webProject2Slot2',2, 'PHOTO-2020-10-26-02-22-18.jpg')">
                             <img :src="require('@/assets/img/projects/web_project_2/PHOTO-2020-10-26-02-22-18.jpg')" alt="">
-                            <p>Picture-1</p>
+                            <!-- <p>Picture-1</p> -->
                         </div>
                     </div>
 
-<!-- 
-                    <div class="wrapper">
+
+                    <!-- <div class="wrapper">
                         <div class="img" @click="showImageInFullScreen('webProject2Slot2',2, 'PHOTO-2020-10-26-02-29-56.jpg')">
                             <img :src="require('@/assets/img/projects/web_project_2/PHOTO-2020-10-26-02-29-56.jpg')" alt="">
                             <p>Picture-2</p>
@@ -215,227 +215,6 @@ export default {
 }
 
 
-// Slot 2 (Vertical)
-
-// .slot2-wrapper{
-//     position: relative;
-//     width:100%;
-//     min-height: 100vh;
-//     padding: 1rem 1.8rem;
-//     background-color: black;
-//     color: white;
-//     z-index: 1;
-//     @include column-horizontal-center();
-//     overflow: scroll;
-
-//     @media(min-width:760px){
-//         padding: 2.2rem;
-//     }
-//     @media(min-width:1020px){
-//         padding: 2.5rem;
-//     }
-
-//     .background-logo{
-//         @include vertical-center();
-//         opacity: 0.2;
-//         width:50%;
-//         height:50%;
-//         object-fit: contain;
-//         z-index: 0;
-//     }
-
-//     .title-wrapper{
-//         position:relative;
-//         width:100%;
-
-//         .title{
-//             @include OptionKatzeSubPageTitle();
-//             h1{
-//                 @include OptionKatzeMainTitle();
-//             }
-//             h3{
-//                 @include OptionKatzeSubTitle();
-//             }
-//         }
-//     }
-
-//     .content-wrapper{
-//         display: flex;
-//         flex-direction: column;    
-//         width:100%;
-//         margin-top:2rem;
-//         column-gap: 2px;
-//         row-gap: 1rem;
-//         overflow: scroll;
-//         flex-direction: column;
-
-//         @media(min-width:800px){
-//             margin-top:4rem;
-//             // width:80%;
-//             row-gap: 3rem;
-//         }
-        
-//         .description-wrapper{
-//             position: relative;
-//             width:100%;
-            
-
-//             h6{
-//                 @include titleSetting();
-//                 margin-bottom:1rem;
-                
-//             }
-
-//             p{
-//                 width:100%;
-//                 font-family: $primary-font;
-//                 color:white;
-//                 @include contentFontSetting_320px;
-                
-//                 padding:0;
-
-//                 @media(min-width:320px){
-//                     @include contentFontSetting_320px;
-//                 }
-//                 @media(min-width:760px){
-//                     @include contentFontSetting_760px;
-//                 }
-//             }
-//         }
-
-//         .img-wrapper{
-//             width:100%;
-//             display: flex;
-//             flex-direction: column;
-//             gap:2rem;
-
-//             .img{
-//                 position: relative;
-//                 height:100%;
-//                 min-height:170px;
-//                 z-index:1;
-//                 width:100%;
-                
-    
-//                 img{
-//                     position: relative;
-//                     width:100%;
-//                     height:100%;
-//                     object-fit: cover;
-//                     border:4px rgba(255, 255, 255, 0.74) solid;
-//                 }
-
-//                 p{
-//                     position: absolute;
-//                     z-index: 2;
-//                     bottom: 8px;
-//                     left: 4px;
-//                     height: 1.5rem;
-//                     line-height: 2.2rem;
-//                     color: white;
-//                     font-size: 0.9rem;
-//                     padding: 0 1rem;
-//                     letter-spacing: 0.2rem;
-//                     font-family: sans-serif;
-//                     font-weight: 100;
-//                     background-color: rgba(0, 0, 0, 0.336);
-//                 }
-//             }
-//         }
-
-//     }
-// }
-// // End of Slot 2 (Vertical)
-
-// // Slot 2 (Horizontal)
-
-// #web-project-2.rotated div div div.face4 .slot2-wrapper{
-//     @media(min-width:560px){
-//         padding:1rem 2rem;
-//     }
-    
-//     .background-logo{}
-
-//     .title-wrapper{
-//         .title{
-//             h1{
-//                 @media(min-width:560px){
-//                     font-size:1.1rem;
-//                 }
-//                 @media(min-width:800px){
-//                     font-size:1.7rem;
-//                 }
-//                 @media(min-width:1300px){
-//                     font-size:2.2rem;
-//                 }
-
-//             }
-//             h3{
-//                 @media(min-width:560px){
-//                     font-size: 0.6rem;
-//                 }
-//                 @media(min-width:800px){
-//                     font-size:0.9rem;
-//                 }
-//                 @media(min-width:800px){
-//                     font-size:1.1rem;
-//                 }
-//             }
-//         }
-//     }
-
-//     .content-wrapper{
-//         @media(min-width:560px){
-//             flex-direction: row;
-//             gap:1rem;
-//         }
-//         @media(min-width:1000px){
-//             gap:4rem;
-//             justify-content: center;
-//             // width:50%;
-//         }
-
-//         .description-wrapper{
-//              max-width:800px;
-//             h6{
-//                 @media(min-width:560px){
-//                     font-size: 1rem;
-//                 }
-//                 @media(min-width:800px){
-//                     font-size: 2rem;
-//                 }
-//             }
-
-//             p{
-//                 @media(min-width:500px){
-//                     @include contentFontSetting_320px();
-//                 }
-//                 @media(min-width:1020px){
-//                     @include contentFontSetting_760px();
-//                 }
-//             }
-//         }
-    
-
-//     .img-wrapper{
-   
-//         @media(min-width:1000px){
-//             width:50%;
-//             max-width:500px;
-            
-//         }
-//         img{
-//             img{}
-//             p{}
-//         }
-//     }
-//     }
-// }
-
-// End of Slot 2 (Horizontal)
-
-
-
 // Slot 3 //
 .slot2-wrapper,
 .slot3-wrapper{
@@ -570,6 +349,7 @@ export default {
 
 #web-project-2.rotated div div div.face4 .slot2-wrapper,
 #web-project-2.rotated div div div.face2 .slot3-wrapper{
+
   
     .background-logo{}
 
@@ -603,10 +383,8 @@ export default {
 
     .content-wrapper{
 
-        // border:blue thin solid;
+
         align-items: center;
-        // justify-content: center;
-        // justify-content: space-evenly;
 
         @media(min-width:1000px){
             padding: 0 10%;
@@ -659,12 +437,29 @@ export default {
                 }
             }
             .img{
-                border:green thin solid;
+                // border:green thin solid;
+       
                 @media(min-width:560px){
+                    min-height:180px;
+                    min-width:265px;
+
                     text-align: center;
-                        width:100%;
+                    width:100%;
                 }
-                img{}
+                img{
+                    @media(min-width:660px){
+                        min-height:180px;
+                        min-width:265px;
+                    }
+                    @media(min-width:730px){
+                        min-height:204px;
+                        min-width:300px;
+                    }
+                    @media(min-width:800px){
+                        max-height:204px;
+                        max-width:300px;
+                    }
+                }
             }
         }
 

@@ -1,7 +1,7 @@
 <template>
     <section class="web-project-3" id="web-project-3">
 
-        <rotation-layout-3 ref="rotationLayoutRef3">
+        <rotation-layout ref="rotationLayoutRef3">
             
             <!-- slot 1-->
             <template v-slot:slot1>
@@ -36,7 +36,7 @@
                     </div>
                     <div class="content-wrapper">
                         <div class="video-wrapper">
-                            <video loop autoplay muted>
+                            <video loop autoplay muted controls>
                                 <source :src="require('@/assets/img/projects/web_project_3/optionkatze2.mp4')" type="video/mp4">
                             </video>
                         </div>
@@ -45,21 +45,14 @@
             </template>
             <!-- end of slot 2 -->
 
-        </rotation-layout-3>
+        </rotation-layout>
     </section>
 </template>
 
 <script>
 
-
-import ProjectPageLayout from "../layout/ProjectPageLayout.vue";
-import RotationLayout3 from "../layout/rotationLayout.vue";
-
 export default {
-    components:{
-        ProjectPageLayout,
-        RotationLayout3
-    },
+
     mounted(){
         // pass proprs to "rotation-layout" slot
         this.$refs.rotationLayoutRef3.buttonSetting = { 
