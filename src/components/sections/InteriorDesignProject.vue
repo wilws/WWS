@@ -1019,10 +1019,9 @@ export default {
                                     @include contentFontSetting_320px();
                                     font-size: 0.5rem;
                                     line-height: 0.8rem;
-                                    @media(min-width:750px){
-                                       @include contentFontSetting_760px();
-                                    }
+                           
                                     @media(min-width:1020px){
+                                        @include contentFontSetting_760px();
                                         font-size: 1.2rem;
                                         line-height: 1.9rem;
                                     }

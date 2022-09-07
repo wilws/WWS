@@ -30,13 +30,13 @@
                 <div class="slot2-wrapper">
                     <div class="left-side">
                         <div class="bg-img"><img :src="require('@/assets/img/projects/design_project_1/bg-img.jpeg')"></div>
-                        <div class="blackbox">
+                        <!-- <div class="blackbox">
                             <h1>JOYFUL HOUSE</h1>
                             <h3>- a dream of 5 -</h3>
                             <p>
                                 Jason with 4 other friends established Joyful House in 2016. It was their dream to have a shop to endlessly supply sweetness to people around.
                             </p>
-                        </div>
+                        </div> -->
                     </div>
 
                     <div class="right-side">
