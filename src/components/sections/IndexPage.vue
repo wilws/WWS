@@ -31,6 +31,11 @@
                 The scientific background helps me a lot in logical thinking. And the knowledge obtained from postgraduate diploma always stimulating me what programming can do in the financial industry.
                 <br><br>
                 “Learn” and “Create” are what I passionate about. Applying newly absorbed knowledge to solve the problem encountered in reality brings me a great satisfaction. I am seeking chances to participate in a relative project.
+                <br><br>
+                <b>Contact</b>
+                <br>
+                Email : wilson.ws.pro@gmail.com<br>
+                Github : https://github.com/wilws/
           </div>
         </div>
     </section>

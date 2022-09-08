@@ -881,25 +881,25 @@ export default {
         // z-index: 1;
 
 
-        @media(min-width:1024px){
-            position: relative;  
-            margin-bottom:2rem;
+        // @media(min-width:1024px){
+        //     position: relative;  
+        //     margin-bottom:2rem;
 
-            &::after{
-                content: "";
-                position:absolute;
-                left:0;
-                top:0;
-                width:101%;
-                height:100%;
-                background-color: rgb(255, 255, 255);
-                // border:red solid thin;
-                z-index: 0;
-                transform:translateZ(-0.01rem);
-                -webkit-transform:translateZ(-0.01rem);
+        //     &::after{
+        //         content: "";
+        //         position:absolute;
+        //         left:0;
+        //         top:0;
+        //         width:101%;
+        //         height:100%;
+        //         background-color: rgb(255, 255, 255);
+        //         // border:red solid thin;
+        //         z-index: 0;
+        //         transform:translateZ(-0.01rem);
+        //         -webkit-transform:translateZ(-0.01rem);
                 
-            }
-        }
+        //     }
+        // }
         
 
         .title-wrapper{
@@ -1116,8 +1116,10 @@ export default {
 // #graphic-design-project-1 > div > div > div.face.face2
 #graphic-design-project-1.rotated .space .box .face2{
     
+    
 
     .slot3-wrapper{
+        overflow:hidden;
         @media(min-width:560px){
             perspective: 100rem;
             flex-direction: unset;
@@ -1133,6 +1135,7 @@ export default {
                 padding:0 0.6rem;
                 margin-bottom: 0;
                 background-color: white;
+                // overflow: hidden;
 
 
 
@@ -1158,9 +1161,9 @@ export default {
                     content: "";
                     position:absolute;
                     left:0rem;;
-                    top:0rem;
+                    top:-1rem;
                     width:101%;
-                    height:100%;
+                    height:110%;
                     background-color: rgb(255, 255, 255);
                     // border:red solid thin;
                     z-index: 0;
