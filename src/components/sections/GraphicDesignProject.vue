@@ -65,7 +65,7 @@
                     <div class="col col-1">
                         <div class="title-wrapper">
                             <h1 class="title">BOX WITHOUT GLUE</h1>
-                            <p>I love the asian architecture’s “Nailless” concept which always connects to the “embodiment of seamlessness”. Hence all the parts of the box were gule-less so as to express the idea : “A treasure-like cake should be placed in a seamless box”. 
+                            <p>I love the asian architecture’s “Nailless” concept which always connects to the embodiment of "seamlessness”. Hence all the parts of the box were gule-less so as to express the idea - “A treasure-like cake should be placed in a seamless box”. 
 After spending numerous time on studying packaging, I drafted my own version’s gule-less box.</p>
                         </div>
                         <div class="img-wrapper">
@@ -90,8 +90,8 @@ After spending numerous time on studying packaging, I drafted my own version’s
                         <div class="title-wrapper">
                             <h1 class="title">MANUFACTURING</h1>
                             <p>
-                                After the testing, I contacted packaging manufacturers in China to make the box real. Dealing with the tricky Chinese manufacturer was the most challenging part in the whole process. In the end, I had tried 3 manufacturers to get the satisfactory result.
-                                <br>
+                                After the testing, I contacted packaging manufacturers in China to make the box real. Dealing with tricky Chinese manufacturers was the most challenging part in the whole process. In the end, I had tried 3 manufacturers to get the satisfactory result.
+                                <br> <br>
                                 
                                 The logo was silver plated making it more elegant.
 
@@ -134,7 +134,7 @@ export default {
             projectDescription :
             "In the spring of 2019,  My friend Jason was struggling in his cake shop business.  Since the rent of Hong Kong is ridiculously high, he planned to switch the business mode from physical dessert shop to online cake shop.  He asked my assistance to transform the image of the shop. I accepted this challenge with alacrity."+
             "<br><br>"+
-            "With aid of Adobe Photoshop and Illustrator, I  re-designed the shop logo in minimalism style. Moreover Inspired by ancient Asian interlocking architecture concept - “Nailless”-  in construction,  I designed my own version’s “glue-less” cake box in order to put the brand on the high-end-track."
+            "I re-designed the shop logo in minimalism style. Moreover Inspired by ancient Asian interlocking architecture concept - “Nailless”-  in construction,  I designed my own version’s “glue-less” cake box in order to put the brand on the high-end-track."
         }
     },
     mounted(){
@@ -868,6 +868,7 @@ export default {
     .col{
         position: relative;  
         width:100%;
+        height: auto;
         padding:0rem 2rem;
         // border:rgb(243, 10, 10) solid thin;
         @include column-horizontal-center();
@@ -890,7 +891,7 @@ export default {
                 left:0;
                 top:0;
                 width:101%;
-                height:101%;
+                height:100%;
                 background-color: rgb(255, 255, 255);
                 // border:red solid thin;
                 z-index: 0;
@@ -1126,11 +1127,12 @@ export default {
         .col{
             @media(min-width:560px){
                 position: relative;  
-                width:33%;
+                // width:33%;
                 height:100%;
                 // border:rgb(243, 10, 10) solid thin;
                 padding:0 0.6rem;
                 margin-bottom: 0;
+                background-color: white;
 
 
 
@@ -1156,9 +1158,9 @@ export default {
                     content: "";
                     position:absolute;
                     left:0rem;;
-                    top:0;
+                    top:0rem;
                     width:101%;
-                    height:101%;
+                    height:100%;
                     background-color: rgb(255, 255, 255);
                     // border:red solid thin;
                     z-index: 0;
@@ -1253,12 +1255,12 @@ export default {
         }
 
         .col.col-2{
-            z-index: 1;
+            z-index: 2;
             // border:rgb(243, 10, 10) solid thin;
             flex-direction: column-reverse;
             justify-content: start;
             transform-origin: left;
-            transform: rotateY(0deg);
+            transform: rotateY(90deg);
             -webkit-transform-origin: left;
             -webkit-transform: rotateY(90deg); 
                         
@@ -1328,6 +1330,7 @@ export default {
             margin:0;
             padding-left:1rem;
             margin-left:.2rem;
+
             
             z-index: 1;
 
@@ -1343,7 +1346,7 @@ export default {
  
 
             .img-wrapper{
-
+                width:95%;
 
                 .img:nth-child(1){
                     width:100%;

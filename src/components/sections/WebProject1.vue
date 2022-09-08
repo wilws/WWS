@@ -33,20 +33,20 @@ export default {
             subTitle: "2022-ELLOW TRADITION",
             linkToProjectDescription: "Go to the Web Page",
             projectIconUrl: require('@/assets/img/projects/web_project_1/logo.png'),
-            FrontEndTechList: ['HTML/CSS','Javascript','VueJs/Vue-Cli'],
-            BackEndTechList: ['NodeJs / ExpressJs', 'MongoDB'],
-            DesignStyleList: ['RESTFul API', 'JWT Authentication','Stripe API Payment Gateway'],
+            FrontEndTechList: ['HTML+CSS','Javascript','VueJs/Vue-Cli'],
+            BackEndTechList: ['NodeJs','ExpressJs', 'MongoDB'],
+            DesignStyleList: ['REST API', 'JWT','Stripe API'],
             mediaType:"video",
             mediaDisplayUrl: require('@/assets/img/projects/web_project_1/ellow_video.mp4'),
             // mediaDisplayUrl: '/projects/web_project_1/ellow_video.mp4',
             projectDescription :
-                "This is a \"just for fun\" re-build website. The original website of this company was built by PHP + AJAX + MySQL. The company is no longer operating" +
-                "<br>"+               
-                "<br> In 2014 autumn after quitting my job, I self-learnt PHP from books and built my first e-commerce website “Ellow Tradition”. It was an online shop selling interesting cultural handcraft from different part of the world."+
-                "<br>"+
-                "<br> It was out of my expectation that the website eventually helped me to get an PHP web developer job in a radio-control (R/C) hobby Company - AsiaTees.  I had worked in this company for not more than a month before switching back to be a civil servant due to salary consideration."+
-               "<br>"+
-               "<br> To refresh my web development skills, I re-design and re-built the website by using modern tools. Adobe XD was used to draft and design the interface. VueJs is applied as frontend technology, and NodeJs + ExpressJs framework with MongoDB are used in backend. Both ends are communicated by RESTful API and JWT is used for authentication. Stripe is adopted for payment gateway.",
+            "I built this website for practising after completion of NodeJs course."+
+            "<br>"+
+            "<br>"+
+            "I ran the company 'Ellow Tradition', an e-commerce company selling interesting cultural handcraft, long time ago.  The original website of this company was built by PHP + AJAX + MySQL, after having learnt PHP from books on 2014. The website helped me to get an PHP web developer job in a radio-control (R/C) hobby Company - AsiaTees."+
+            "<br>"+
+            "<br>"+
+            "To refresh web development technique, I re-design and re-built the website by using modern tools. Adobe XD is used to design the interface. VueJs is applied as frontend technology and NodeJs + ExpressJs framework with MongoDB are used in backend. Both ends are communicated by REST API. JWT is used for authentication. Stripe is adopted for payment gateway. The website is deployed on Heroku.",
             backgroundColor:"White",
             fontColor:"Black",
             buttonColor:"Black",

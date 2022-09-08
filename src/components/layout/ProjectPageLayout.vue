@@ -16,11 +16,37 @@
             </div>
             <div class="lower-wrapper">
                 <div class="content">
+                    <h3 v-if="!!FrontEndTechList.length">Specification</h3>
+
+                    <div class="bottom-side">
+                        <div v-if="FrontEndTechList.length > 0">
+                            <p class="tech-cat-tittle">Front End</p>
+                            <li v-for="(tech, index) in FrontEndTechList" :key="index">
+                                {{ tech }}
+                            </li>               
+                        </div>
+
+                        <div v-if="BackEndTechList.length > 0">
+                            <p class="tech-cat-tittle">Back End</p>
+                            <li v-for="(tech, index) in BackEndTechList" :key="index">
+                                {{ tech }}
+                            </li>               
+                        </div>
+
+                        <div v-if="DesignStyleList.length > 0">
+                            <p class="tech-cat-tittle">Others</p>
+                            <li v-for="(tech, index) in DesignStyleList" :key="index">
+                                {{ tech }}
+                            </li>               
+                        </div>
+                    </div>
+
+                    <h3>Background</h3>
                     <p class="left-side">
                         <span v-html="projectDescription"></span>
                     </p>
 
-                    <div class="bottom-side">
+                    <!-- <div class="bottom-side">
                         <div v-if="FrontEndTechList.length > 0">
                             <p class="tech-cat-tittle">Front End</p>
                             <li v-for="(tech, index) in FrontEndTechList" :key="index">
@@ -41,16 +67,9 @@
                                 {{ tech }}
                             </li>               
                         </div>
-                    </div>
+                    </div> -->
                 </div>
-
-                
             </div>
-
-
-
-
-
         </div>
         <div class="right-wrapper">
             <div v-if="mediaType == 'video'" class="vidoe">
@@ -257,10 +276,13 @@ export default {
                     position: relative;
     
                     width:100%;
-                    font-size: 0.6rem;
-                    font-weight: 500;
-                    font-family: $secondary-font;
-                    letter-spacing: .1rem;
+                    font-size: 0.8rem;
+                    font-weight: bold;
+                    // font-family: $secondary-font;
+                    
+                    font-family: $primary-font;
+                    text-transform: uppercase;
+                    letter-spacing: 0rem;
                     padding-left: .2rem;
                     margin-top:-.1rem;
                     text-align: left;
@@ -268,7 +290,7 @@ export default {
                     transition: transform 1s .1s;
                     
                     @media(min-width:320px){
-                        font-size: 0.5rem;
+                        font-size: 0.8rem;
                     }
                     @media(min-width:480px){
                         font-size: 0.6rem;
@@ -277,12 +299,12 @@ export default {
                         font-size: 0.9rem;
                     }
                     @media(min-width:760px){
-                        font-size: 1rem;
+                        font-size: 1.2rem;
                         margin-top:-0.3rem;
                     }
                     @media(min-width:1020px){
                         font-size: 1.7rem;
-                        margin-top:-0.7rem;
+                        margin-top:-0.4rem;
                     }
 
                 }
@@ -313,6 +335,7 @@ export default {
                         height: 2.8rem; 
                         width: 16.1rem;
                         font-size: 1.3rem;
+                        margin-top:5px;
                     }
                     @mixin buttonSetting_1300px{
                         height: 1.5rem;
@@ -388,32 +411,60 @@ export default {
                 transition:opacity 1s 1s;
   
                 .left-side{
-                    
+                     text-align: justify;
                     span{
                         @include contentFontSetting_320px();
+                       
                         @media(min-width:768px){
                             @include contentFontSetting_760px()
                         }
                     }
                 }
+
+                h3{
+                    margin-bottom:.5rem;
+                    // @media(min-width:320px){
+                    //     font-size: 0.8rem;
+                    // }
+                    // @media(min-width:768px){
+                    //         font-size: 1rem;
+                    // }
+                    // @media(min-width:1000px){
+                    //         font-size: 1.2rem;
+                    //     }
+                }
                 .bottom-side{
                     position: relative;
                     font-family:'Lucida Sans';
+                    display: flex;
+                    flex-wrap: wrap;
+                    justify-content: space-between;
+                    ;
+                    margin-bottom:2.5rem;
+                    margin-top:1rem;
+                    padding:0 1rem;
+                    // padding-right: 1rem;
                 
                     div {
-                        margin-top:2rem;
+                        // margin-top:2rem;
                         // border:red thin solid;
                     }
 
                     div .tech-cat-tittle{
                         font-weight: bold;
-                        font-size: .8rem;
-                        text-decoration: underline;
+                        font-size: .7rem;
+                        // text-decoration: underline;
                         text-align: left;
                         letter-spacing: 0rem;
-                        margin-bottom:.5rem;
+                        // margin-bottom:.5rem;
                         @media(min-width:320px){
                             font-size: 0.8rem;
+                        }
+                        @media(min-width:760px){
+                            font-size: 0.9rem;
+                        }
+                        @media(min-width:1000px){
+                            font-size: 1rem;
                         }
 
                     }
@@ -421,9 +472,15 @@ export default {
                         list-style: none;
                         text-align: left;
                         font-size: .6rem;
-                        margin-top:.3rem;
+                        // margin-top:.3rem;
                         @media(min-width:320px){
-                            font-size: 0.6rem;
+                            font-size: 0.7rem;
+                        }
+                        @media(min-width:760px){
+                            font-size: 0.9rem;
+                        }
+                        @media(min-width:1000px){
+                            font-size: 1rem;
                         }
     
                     }
@@ -517,13 +574,13 @@ export default {
                 h3{
 
                     @media(min-width:560px){
-                        font-size: 0.5rem;
-                    }
-                    @media(min-width:660px){
-                        font-size: 0.5rem;
-                    }
-                    @media(min-width:800px){
                         font-size: 0.8rem;
+                    }
+                    // @media(min-width:660px){
+                    //     font-size: 0.5rem;
+                    // }
+                    @media(min-width:800px){
+                        font-size: 1rem;
                         margin-top: -2px;
                     }
                     // @media(min-width:1000px){
@@ -531,7 +588,7 @@ export default {
                     //     margin-top: -3px;
                     // }
                     @media(min-width:1300px){
-                        font-size: 1.1rem;
+                        font-size: 1.4rem;
                         margin-top: -4px;
                     }
                     // @media(min-width:1500px){

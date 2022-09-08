@@ -2,7 +2,7 @@
     <section class="skill-set-page" id="skill-set-page">
         <div class="header">
             <h1>Skill Set</h1>
-            <h3>Here are the programming languages and <br>software that I used to create web project. </h3>
+            <h3>Here are the programming languages and <br>software that I use for web application development. </h3>
 
             <div class="card-switcher">
                 <button @click="moveCard(0)"> Frontend </button>

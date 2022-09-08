@@ -37,7 +37,7 @@
                     <div>
                         <h1>A Messy Storage Room</h1>
                         <div class="content">
-                            The place that we rented was used as a store room by the owner.
+                            The place that we rented was used as a store room.
                             <br>
                             <br>
                             Dusty, scraped wall, worn carpet, dirty window and full of miscellaneous stuff, we were at first in question that was it really possible to use this place as our private harbour?
@@ -64,7 +64,7 @@
                         <h1>Planning</h1>
                     </div>
                     <div class="content">
-                        After acquiring knowledge from Internet, YouTube, books..etc, We roughly understood how to do plastering, construction of wooden structure, light and electricity stuff (well..yes...we knew it is dangerous...but we both are graduated from science background and believed in our knowledge. Don’t try it by yourself at home  <i class="fa-solid fa-face-smile"></i>).
+                        After acquiring knowledge from Internet, YouTube, books..etc, We roughly understood how to do plastering, construction of wooden structure, light and electricity stuff (well,yes,we knew it is dangerous...but we both are graduated from science background and believed in our knowledge. Don’t try it by yourself at home).
                        <br>
                        <br>
                        Having ensured that the renovation was within our ability, I started to learn how to use the software "SketchUp" to draw the layout. 
@@ -100,10 +100,11 @@
                         <h1> Desire , Knowledge and Action</h1>
                         <div class="content">
                             We finally spent 3 months to have our cozy studio completed. The whole process was so painful but the outcome was so satisfactory.
-                            <br>
-                                This experience is so unforgettable. We started from zero, from doubt. We had no knowlege of renovation in the very beginning. But, desire motivated us to pursue knowledge to make it real.
-                            <br>
-                            "Knowledge" and "Willingness to Learn" provide us confidence to action, to try and to achieve different things in life. Learning endlessly will turn every chapter of your life journey into an exciting adventrue. The more I learn, the more experience that I can put into my life story. We are the sole writer of our life story. Never, Never, Never write a boring story. You don't have another chance to re-write again.
+                            <br><br>
+                            This is such an unforgettable experience. We started from zero, from doubt. We had no knowledge of renovation at first. But, desire motivated us to pursue knowledge to make it real.
+
+                            <br><br>
+                            "Knowledge" and "Willingness to Learn" provide us confidence to act, to try and to achieve different things. ”Learning” can turn every chapter of life journey into an exciting adventure. The more I learn, the more experience that I can put into my life story. We are the sole writer of our life story. Never, Never, Never write a boring story. You don't have another chance to re-write it.
                         </div>
                     </div>
                 </div>
@@ -327,6 +328,7 @@ export default {
         .h1-wrapper{
             h1{
                 text-align: center;
+                text-transform: uppercase;
                 font-family: $secondary-font;
                 font-size: 2.3rem;
                 font-weight: 300;
@@ -342,7 +344,7 @@ export default {
             width:80%;
             max-width:588px;
             color: #1f1f1f;
-            padding:.2rem;
+            padding:.3rem;
             background-color: rgba(255, 255, 255, 0.8);
 
             @media(min-width:320px){
@@ -1077,10 +1079,12 @@ export default {
             width:100%;
             h1{
                 // border: thin solid red;
+                font-weight: bold;
                 width:100%;
                 @include titleSetting();
                 font-size: 1.1rem;
                 @media(min-width:760px){
+                    font-weight: bold;
                     font-size: 2.4rem;
                 }
             }

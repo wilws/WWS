@@ -14,8 +14,7 @@
                 <div class="intro">
                     <h1>Course Assignment</h1>
                     <p>
-                        Udemy is my source of coding knowledge. I always follow the online course and complete the assignments / projects requested in the course. Whenever I encounter something that I don’t understand druing the lesson, I will pause the video then search for the reason rather than clicking “Next” to let it remains mysterious. Therefore, I understand every single codes that I type in my assignment.  Hence I can replicate the effect / output that the assignments have. 
-                        <br>It is meaningless to fake what you know as time will reveal it anyway.
+                        Udemy is my source of programming knowledge. The following are the assignments that I have completed in the online courses.
                     </p>
                 </div>
 

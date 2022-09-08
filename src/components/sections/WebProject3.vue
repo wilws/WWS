@@ -68,9 +68,9 @@ export default {
             subTitle: "2019-OPTION KATZE II",
             linkToProjectDescription: "View Video Demo",
             projectIconUrl: require('@/assets/img/projects/web_project_3/logo.png'),
-            FrontEndTechList: ['HTML/CSS','Javascript'],
+            FrontEndTechList: ['HTML+CSS','Javascript'],
             BackEndTechList: ['Python','Django', 'MySQL'],
-            DesignStyleList: ['Ajax  for data exchange', 'Bootstrip for styling','JQuery'],
+            DesignStyleList: ['Bootstrip','JQuery'],
             mediaType:"image",
             mediaDisplayUrl: require('@/assets/img/projects/web_project_3/cover.png'),
             backgroundColor:"Black",
@@ -78,11 +78,13 @@ export default {
             id: "#web-project-3",
             buttonColor:"#EAAB15",
             projectDescription :  
-            "RSI, MACD, SMA…etc. Those mysterious words from Technical Analysis  (TA) are always seen in stock world. TA is a method to predict the price movement of an asset. But it is always blamed by fundamental investors that TA is nothing but astrology. So, to dig out how accurate TA could be in investment, I made this application for back testing difference TA strategies, to see wether it is really profitable if disciplinarily following the TA strategies.  Yahoo-finance API is used to extract historical price data."+
+            "This is an application to backtest different Technical Analysis (TA) strategy, like RSI, MACD, SMA,etc."+
+            "<br>"+
+            "The purpose of building this app is to see whether it is really profitable if trading disciplinarily  with those TA indicators."+
             "<br>"+
             "<br>"+
-            "By clicking the  “View Video Demo” button above, you can see if I buy 0002.hk when RSI is lower than 20 and sell when hight than 70, it in the end is a profitable strategy.  But it doesn’t mean that we can have the same positive result if adopting the same strategy on other assets."
-        }
+            "There is a video demo. By clicking  “View Video Demo” button above, you can see what will happen if buying stock “0002.hk” during RSI is lower than 20 and selling when it is higher than 70.  It showed that in the end it is a profitable strategy. But it doesn’t mean that we can have the same positive result if adopting the same strategy on other assets."
+            }
     },
     methods:{
 

@@ -152,9 +152,9 @@ export default {
             subTitle: "2018-OPTION KATZE",
             linkToProjectDescription: "View Project Description",
             projectIconUrl: require('@/assets/img/projects/web_project_2/logo.png'),
-            FrontEndTechList: ['HTML/CSS','Javascript'],
+            FrontEndTechList: ['HTML+CSS','Javascript'],
             BackEndTechList: ['Python','Django', 'MySQL'],
-            DesignStyleList: ['Ajax  for data exchange', 'Bootstrip for styling','JQuery', 'Beautifulsoup for web scrapping'],
+            DesignStyleList: ['Bootstrip','JQuery','BeautifulSoup'],
             mediaType:"image",
             mediaDisplayUrl: require('@/assets/img/projects/web_project_2/cover.png'),
             backgroundColor:"Black",
@@ -162,18 +162,15 @@ export default {
             fontColor:"white",
             buttonColor:"#0099AF",
             id: "#web-project-2",
+            projectCode:'Web_Project_2',
             projectDescription :
-            "I was so fascinated in option trading after reading Sheldon Natenberg’s  “Option Volatility & Pricing: Advanced Trading Strategies and Techniques”. The charm of option is that you can adopt numerous strategies by combining selling or buying action of put and call contract."+
+            "This is a web application to test the profit-loss of different option strategy."+
             "<br>"+
-            "<br>One day, I was tired to calculate the profit and return of each strategy manually. I wished there was an application that could automatically scrape market data from internet, calculate contract price and volatility, test all the possible combinations and finally tell you which is worth to trade."+
-            "Therefore I created one with Python and Django. The reason to choose python as the major tool is due to its useful package like NumPy and Pandas which facilitates in scientific calculation."+
-            "<br>"+           
-            "<br>When all the functions I want were created. I have an amazing discovery - Arbitrage. Please click the \"View Project Description\" button above to see the detail."+
+            "The application scraped option price data from internet, calculated contract price and volatility, formed different option strategies by longing or shorting  different contract at different strike price."+
+             "<br>"+
             "<br>"+
-            "<br>I later hosted the application on Google AppEngine and also joined Google AdSense, wishing to earn some to cover the expensive hosting cost. However it was not successful."+          
-            "As I seldom trade option later and the cost of hosting was so high, there is no more maintenance on the application. Some packages in the app are depreciated. Though Option Katze is not be able to function now, it is a valuable experience to utilise programming knowledge to tackle problem in other sector.",
-
-            projectCode:'Web_Project_2'
+            "The application sometimes could dig out arbitrage chance. Please click the 'View Project Description' button above to see a bit more."+
+            "The application was built by Python with Django framework and styled with Bootstrap. BeautifulSoap was used for web scrapping. It was deployed on Google AppEngine and also joined Google AdSense, wishing to earn some to cover the expensive hosting cost.  However,  I am not so fascinated in option trading now.  There is no more maintenance on the application and the app is not able to function properly yet. Nevertheless,  it is a valuable experience to apply programming knowledge to tackle problem encountered in other sector."
         }
     },
     methods:{

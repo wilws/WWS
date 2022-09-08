@@ -16,16 +16,23 @@
             <div class="above-intro"> 
             </div>
             <div class="introduction">
+                <b>About Me</b>
+                <br>
                 I am Wai Shun WONG, a self-taught full stack web developer. 
-                <br><br>I specialise in VueJs, HTML and CSS/SACS/SCSS to construct frontend web application. For the backend side, I am proficient in using Python + Django or NodeJs + Express framework. I can construct RESTful API for the communication of both front and back ends. I also have knowledge to connect application to MySQL / MongoDB  to preform CRUD.
-                <br><br>“Learn” and “Create” are what I passionate about. From design to coding and even to investment, applying newly absorbed knowledge to solve the problem encountered in reality brings me a great satisfaction. 
-                <br><br>After Obtaining a Bachelor Degree in Biology in Hong Kong, I pursued a Postgraduate Diploma in Investment Management and Financial Intelligence. The knowledge obtained from postgraduate diploma always stimulating me what programming can do in financial aspect.  I recently finished a course of Solidity and Ethereum. I am seeking chances to participate in a relative project. But, I will never confine myself in single area as life is a journey of learning. My passion for learning and coding drive me to try and challenge as much as I can, no matter it is a frontend project, backend project or others.
+                <br><br>
+                I am proficient in construing frontend application with VueJs, HTML and CSS/SCSS. For the backend, I have experience with using Python＋Django or NodeJs＋ExpressJs framework to construct REST API. I also have knowledge to connect application to MySQL or MongoDB to preform CRUD.
+                <br><br>
+                Attracted by the trend of blockchain technology, I recently completed a course of solidity and Ethereum, wishing it could bring me more fun in my coding journey.
+                <br><br>
+
+                <b>Education Background</b>
+                <br>
+                After Obtaining a Bachelor Degree in Biology in Hong Kong, I pursued a Postgraduate Diploma in Investment Management and Financial Intelligence. 
+                The scientific background helps me a lot in logical thinking. And the knowledge obtained from postgraduate diploma always stimulating me what programming can do in the financial industry.
+                <br><br>
+                “Learn” and “Create” are what I passionate about. Applying newly absorbed knowledge to solve the problem encountered in reality brings me a great satisfaction. I am seeking chances to participate in a relative project.
           </div>
         </div>
-
-
-
-
     </section>
 </template>
 
@@ -240,12 +247,22 @@ export default {
             color: black;
             height:100%;
             overflow: scroll;
+            padding:2rem;
 
             @media(min-width:320px){
                 @include contentFontSetting_320px();
             }
             @media(min-width:760px){
                 @include contentFontSetting_760px();
+            }
+            
+            b{
+                font-weight: bolder;
+                // text-decoration: underline;
+                text-transform: uppercase;
+                letter-spacing: .1rem;
+                font-family: 'Courier New', Courier, monospace;
+          
             }
         }
     }
@@ -255,8 +272,6 @@ export default {
 
 $min-width:560px;
 .index-page.rotated{
-
-
 
     @media(min-width:500px){   
         
@@ -366,7 +381,7 @@ $min-width:560px;
       
         .above-intro{
             @media(min-width:$min-width){
-                margin-bottom:5rem;
+                margin-bottom:8rem;
             }
             @media(min-width:660px){
                 margin-bottom:6rem;
@@ -393,7 +408,8 @@ $min-width:560px;
                 @media(min-width:1000px){
                     // height:calc(100% - $aboveIntroHeight_760px);
                     @include contentFontSetting_760px();
-                }      
+                }  
+
             }
         }
     }
