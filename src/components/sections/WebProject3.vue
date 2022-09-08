@@ -70,7 +70,7 @@ export default {
             projectIconUrl: require('@/assets/img/projects/web_project_3/logo.png'),
             FrontEndTechList: ['HTML+CSS','Javascript'],
             BackEndTechList: ['Python','Django', 'MySQL'],
-            DesignStyleList: ['Bootstrip','JQuery'],
+            DesignStyleList: ['Bootstrap','JQuery'],
             mediaType:"image",
             mediaDisplayUrl: require('@/assets/img/projects/web_project_3/cover.png'),
             backgroundColor:"Black",
@@ -78,7 +78,7 @@ export default {
             id: "#web-project-3",
             buttonColor:"#EAAB15",
             projectDescription :  
-            "This is an application to backtest different Technical Analysis (TA) strategy, like RSI, MACD, SMA,etc."+
+            "This is an application to backtest the profitability of adopting different Technical Analysis (TA) strategies, like RSI, MACD, SMA,etc."+
             "<br>"+
             "The purpose of building this app is to see whether it is really profitable if trading disciplinarily  with those TA indicators."+
             "<br>"+

@@ -417,16 +417,16 @@ export default {
                 '#reactjs-bar':'40%',
                 '#python-bar':'100%',
                 '#django-bar':'100%',
-                '#nodejs-bar':'90%',
+                '#nodejs-bar':'80%',
                 '#expressjs-bar':'90%',
                 '#php-bar':'40%',
                 '#laravel-bar':'20%',
-                '#mysql-bar':'70%',
-                '#mongodb-bar':'70%',
+                '#mysql-bar':'60%',
+                '#mongodb-bar':'60%',
                 '#solidity-bar':'40%',
                 '#indesign-bar':'100%',
                 '#xd-bar':'90%',
-                '#illustrator-bar':'90%',
+                '#illustrator-bar':'70%',
                 '#photoshop-bar':'70%'
             }
 

@@ -30,7 +30,7 @@
                 After Obtaining a Bachelor Degree in Biology in Hong Kong, I pursued a Postgraduate Diploma in Investment Management and Financial Intelligence. 
                 The scientific background helps me a lot in logical thinking. And the knowledge obtained from postgraduate diploma always stimulating me what programming can do in the financial industry.
                 <br><br>
-                “Learn” and “Create” are what I passionate about. Applying newly absorbed knowledge to solve the problem encountered in reality brings me a great satisfaction. I am seeking chances to participate in a relative project.
+                “Learn” and “Create” are what I passionate about. Applying newly absorbed knowledge to solve the problem encountered in reality brings me a great satisfaction. 
                 <br><br>
                 <b>Contact</b>
                 <br>

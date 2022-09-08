@@ -154,7 +154,7 @@ export default {
             projectIconUrl: require('@/assets/img/projects/web_project_2/logo.png'),
             FrontEndTechList: ['HTML+CSS','Javascript'],
             BackEndTechList: ['Python','Django', 'MySQL'],
-            DesignStyleList: ['Bootstrip','JQuery','BeautifulSoup'],
+            DesignStyleList: ['Bootstrap','JQuery','BeautifulSoup'],
             mediaType:"image",
             mediaDisplayUrl: require('@/assets/img/projects/web_project_2/cover.png'),
             backgroundColor:"Black",
