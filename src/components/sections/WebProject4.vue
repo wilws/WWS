@@ -41,7 +41,7 @@ export default {
             DesignStyleList: [],
             mediaType:"image",
             mediaDisplayUrl: require('@/assets/img/projects/web_project_4/cover.png'),
-            backgroundColor:"White",
+            backgroundColor:"rgb(255, 255, 255)",
             fontColor:"Black",
             buttonColor:"#F70007",
             id: "#web-project-4",

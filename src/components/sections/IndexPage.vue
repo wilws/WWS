@@ -13,31 +13,29 @@
         </div>
 
         <div class="introduction-wrapper">
-            <div class="above-intro"> 
-            </div>
+            <div class="above-intro"></div>
             <div class="introduction">
-                <b>About Me</b>
+                <b class="subtitle">About Me</b>
                 <br>
-                I am Wai Shun WONG, a self-taught full stack web developer. 
+                I am Wai Shun WONG, a full stack web developer. 
                 <br><br>
-                I am proficient in construing frontend application with VueJs, HTML and CSS/SCSS. For the backend, I have experience with using Python＋Django or NodeJs＋ExpressJs framework to construct REST API. I also have knowledge to connect application to MySQL or MongoDB to preform CRUD.
+                I am proficient in constructing frontend application with ReactJs, VueJs, HTML and CSS/SCSS. For the backend, I have experience with using Python＋Django or NodeJs＋ExpressJs framework to construct REST API. I also have knowledge to connect application to MySQL , MongoDB and PSQL to preform CRUD.
                 <br><br>
-                Attracted by the trend of blockchain technology, I recently completed a course of solidity and Ethereum, wishing it could bring me more fun in my coding journey.
+                More recently, I have been attracted by the trend of blockchain technology, and have completed a course in Solidity & Ethereum. This has brought more fun and enjoyment to my coding journey.
                 <br><br>
 
-                <b>Education Background</b>
+                <b class="subtitle">Education Background</b>
                 <br>
-                After Obtaining a Bachelor Degree in Biology in Hong Kong, I pursued a Postgraduate Diploma in Investment Management and Financial Intelligence. 
-                The scientific background helps me a lot in logical thinking. And the knowledge obtained from postgraduate diploma always stimulating me what programming can do in the financial industry.
+                After obtaining a Bachelor’s Degree in Biology in Hong Kong, I pursued a Postgraduate Diploma in Investment Management and Financial Intelligence. The scientific background helps me a lot in logical thinking and the knowledge obtained from my postgraduate diploma always stimulates me to think what programming can do in the financial industry.
                 <br><br>
-                “Learn” and “Create” are what I passionate about. Applying newly absorbed knowledge to solve the problem encountered in reality brings me a great satisfaction. 
+                I am highly passionate about learning & creating and applying newly absorbed knowledge to solve problems brings me a great satisfaction.
                 <br><br>
-                <b>Contact</b>
+                <b class="subtitle">Contact</b>
                 <br>
                 Email : wilson.ws.pro@gmail.com<br>
                 Github : https://github.com/wilws/
           </div>
-        </div>
+        </div> <!-- end of introduction-wrapper -->
     </section>
 </template>
 
@@ -64,6 +62,9 @@ export default {
 
 <style lang="scss" scoped>
 
+ /* *{
+        border:red thin solid;
+    } */
 
 .index-page{
     position:relative;
@@ -82,12 +83,9 @@ export default {
             position:relative;
             width:100%;
             height:100%;
-           
-        
             top:0;
             right:0;
             // border: red thin solid;
-    
             overflow: hidden;
 
 
@@ -97,7 +95,6 @@ export default {
                 height:100%;      
                 // border: red thin solid;
                 float:right;
-                
                 object-fit:cover;
                 overflow: hidden;
                 @media (min-width:760px) {
@@ -219,14 +216,14 @@ export default {
 
     .introduction-wrapper{
         position: relative;     
-        // height:50%;
         height:55%;
         width: 100%;
-        padding:0 1.3rem 0rem 1.3rem;
+        padding:0 0.1rem 0.9rem 0.1rem;
         overflow: hidden;
         z-index: 0;
         display:flex;
         flex-direction: column;
+        /* border:rgb(14, 34, 14) thick solid; */
   
 
         @media(min-width:760px){
@@ -235,6 +232,7 @@ export default {
 
         .above-intro{
             position: relative;
+            /* border: red thin solid; */
             @media(min-width:320px){
                 margin-bottom:34px;
             }
@@ -252,12 +250,13 @@ export default {
             color: black;
             height:100%;
             overflow: scroll;
-            padding:2rem;
+            padding:1.2rem;
 
             @media(min-width:320px){
                 @include contentFontSetting_320px();
             }
             @media(min-width:760px){
+                padding:2rem;
                 @include contentFontSetting_760px();
             }
             

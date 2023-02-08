@@ -127,7 +127,7 @@ export default {
             DesignStyleList: [],
             mediaType:"image",
             mediaDisplayUrl: require('@/assets/img/projects/design_project_1/cover.jpeg'),
-            backgroundColor:"White",
+            backgroundColor:"rgb(255, 255, 255)",
             fontColor:"Black",
             buttonColor:"grey",
             id: "#graphic-design-project-1",

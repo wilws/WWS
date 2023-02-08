@@ -4,6 +4,7 @@
     <menu-page></menu-page>
     <index-page></index-page>
     <skill-set-page></skill-set-page>
+    <nc-gallery-web-project-5></nc-gallery-web-project-5>
     <web-project-1></web-project-1>
     <web-project-2></web-project-2>
     <web-project-3></web-project-3>
@@ -28,6 +29,8 @@ import WebProject4 from './components/sections/WebProject4.vue';
 import GraphicDesignProject from './components/sections/GraphicDesignProject.vue';
 import InteriorDesignProject from './components/sections/InteriorDesignProject.vue';
 import FinalPage from './components/sections/FinalPage.vue';
+import NcGalleryWebProject5 from './components/sections/NcGalleryWebProject5.vue';
+
 
 
 
@@ -45,14 +48,10 @@ export default {
     GraphicDesignProject,
     InteriorDesignProject,
     FinalPage,
-    
+    NcGalleryWebProject5,    
   },
 
   mounted(){
-
-    
- 
-
     this.disableIOSScalability();            // [mixins function]. to stop the ISO scalability during rotation
     window.addEventListener('resize',()=>{   
         this.defaultBoxes();                // [mixins function]. to turn all the boxex back to homepage

@@ -73,7 +73,7 @@ export default {
             DesignStyleList: ['Bootstrap','JQuery'],
             mediaType:"image",
             mediaDisplayUrl: require('@/assets/img/projects/web_project_3/cover.png'),
-            backgroundColor:"Black",
+            backgroundColor:"rgb(0, 0, 0)",
             fontColor:"white",
             id: "#web-project-3",
             buttonColor:"#EAAB15",

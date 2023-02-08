@@ -157,7 +157,7 @@ export default {
             DesignStyleList: ['Bootstrap','JQuery','BeautifulSoup'],
             mediaType:"image",
             mediaDisplayUrl: require('@/assets/img/projects/web_project_2/cover.png'),
-            backgroundColor:"Black",
+            backgroundColor:"rgb(0, 0, 0)",
          
             fontColor:"white",
             buttonColor:"#0099AF",
@@ -270,8 +270,11 @@ export default {
 
     .content-wrapper{
         display: flex;
-        flex-direction: column;    
+        flex-direction: column; 
+        justify-content: center;   
+        align-items: center;
         width:100%;
+        height:100%;
         row-gap: 1rem;
 
         @media(min-width:800px){
@@ -282,8 +285,11 @@ export default {
         .wrapper{
             position: relative;
             width:100%;
+            height:100%;
             display: flex;
             flex-direction: column;  
+            justify-content: center;   
+            align-items: center;
             gap:1rem;
 
             div{

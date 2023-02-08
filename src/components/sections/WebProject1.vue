@@ -40,14 +40,14 @@ export default {
             mediaDisplayUrl: require('@/assets/img/projects/web_project_1/ellow_video.mp4'),
             // mediaDisplayUrl: '/projects/web_project_1/ellow_video.mp4',
             projectDescription :
-            "I built this website for practising after completion of NodeJs course."+
+            "I built this website just for practising purpose after the completion of my NodeJs course."+
             "<br>"+
             "<br>"+
             "I ran the company 'Ellow Tradition', an e-commerce company selling interesting cultural handcraft, long time ago.  The original website of this company was built by PHP + AJAX + MySQL, after having learnt PHP from books on 2014. The website helped me to get an PHP web developer job in a radio-control (R/C) hobby Company - AsiaTees."+
             "<br>"+
             "<br>"+
             "To refresh web development technique, I re-design and re-built the website by using modern tools. Adobe XD is used to design the interface. VueJs is applied as frontend technology and NodeJs + ExpressJs framework with MongoDB are used in backend. Both ends are communicated by REST API. JWT is used for authentication. Stripe is adopted for payment gateway. The website is deployed on Heroku.",
-            backgroundColor:"White",
+            backgroundColor:"rgb(255, 255, 255)",
             fontColor:"Black",
             buttonColor:"Black",
             id: "#web-project-1"
@@ -55,7 +55,7 @@ export default {
     },
     methods:{
         workDisplay(){
-            window.open("https://ellowtradition-vue.herokuapp.com/", '_blank');
+            window.open("https://ellowtradition-vue.web.app/index", '_blank');
         }
     }
 }
