@@ -32,7 +32,7 @@ export default {
     },
     data(){
         return {
-            mainTitle : "Web Project 4",
+            mainTitle : "JavaScript Project",
             subTitle: "2016 - Longlife Production Limited",
             linkToProjectDescription: "Go to the Web Page",
             projectIconUrl: require('@/assets/img/projects/web_project_4/logo.png'),

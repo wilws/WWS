@@ -1,45 +1,64 @@
 <template>
-    <div class="background" :class="{show: scrollToPage, displayText:showLongText}" ref="background" :style="{backgroundColor:backgroundColor}">
-        <span class="closeButton" @click="backgroundToggleButton" > Close </span>
+    <div class="background" ref="background" :class="{show: scrollToPage, displayText:showLongTextModal}"  :style="{backgroundColor:backgroundColor}">
+        <span class="closeButton" @click="showDescriptionToggleButton" > Close </span>
         <h3>Background</h3>
-        <p class="paragraph"  ref="paragraph">
-            <span v-html="projectDescription"></span>
-            <span v-if="longText" class="longTextCover" :style="{background: longTextBgStyle}" @click="backgroundToggleButton"> [ View ] </span>
-        </p>
+        <div class="paragraph"  ref="paragraph">
+            <span class="description" v-html="projectDescription" ref="description"></span>
+            <span v-if="isLongText" class="longTextCover"  :style="{background: longTextBgStyle}" @click="showDescriptionToggleButton"> [ View ] </span>
+        </div>
     </div>
 </template>
 
 
 <script>
 export default {
-    props:['projectDescription','scrollToPage','id','backgroundColor'],
-    
+    props:['projectDescription','scrollToPage','id','backgroundColor',"buttonColor"],
+    inject:['menuButtonOnOffSwitch'],
     data(){
         return {
-            longText: false,
+            isLongText: false,
             longTextBgStyle: '',
-            showLongText: false
+            showLongTextModal: false
         }
     },
 
     mounted(){
+        this.$nextTick(() => {
+            this.textCoverController();
+        });
 
-        if (this.checkIfLongText()) {
-                this.longText = true;
-                this.longTextBgStyle = this.longTextCoverBgColorGenerator();
-            } else {
-                this.longText = false;
-                this.longTextBgStyle = '';
-            }
+        window.addEventListener('resize',() => {
+            setTimeout(() => {this.textCoverController();},0)
+        })
+
     },
     
+
     methods:{
 
-        checkIfLongText(){
-            const backgroundHeight = this.$refs.background.offsetHeight;
-            const paragraphHeight = this.$refs.paragraph.offsetHeight;
+        textCoverController(){
+            if (this.checkIfLongText()) {
+                this.setTextCover();
+            } else {
+                this.removeTextCover();
+            }
+        },
 
-            if (backgroundHeight<paragraphHeight) {
+        setTextCover(){
+            this.isLongText = true;
+            this.longTextBgStyle = this.longTextCoverBgColorGenerator();
+        },
+        
+        removeTextCover(){
+            this.isLongText = false;
+            this.longTextBgStyle = '';
+        },
+
+        checkIfLongText(){
+            const paragraphHeight = this.$refs.paragraph.offsetHeight;
+            const descriptionHeight = this.$refs.description.offsetHeight;
+
+            if (paragraphHeight-20 < descriptionHeight) {
                return true;
             } else {
                return false;
@@ -55,13 +74,15 @@ export default {
 
         },
 
-        backgroundToggleButton(){
-            this.showLongText =  !this.showLongText;
-            if (this.showLongText ){
+        showDescriptionToggleButton(){
+            this.showLongTextModal =  !this.showLongTextModal;
+            if (this.showLongTextModal ){
                 document.querySelector(this.id).scrollIntoView();
-                this.lockscreen(true)
+                this.menuButtonOnOffSwitch(false);
+                this.lockscreen(true);
             } else {
-                 this.lockscreen(false)
+                this.lockscreen(false);
+                this.menuButtonOnOffSwitch(true);
             }
         },
 
@@ -83,16 +104,14 @@ export default {
 
     position:relative;
     width:100%;
-    height: 100%;
-    height:fit-content;
+    height:100%;
     opacity:0;
-    margin-top: 30px;
     transition:opacity 1s 1s;
-    padding-bottom:30px;
     overflow: hidden;
-
-
-  
+    display: flex;
+    flex-direction: column;
+    gap:15px;
+      
     &.show{
         opacity: 1;
     }
@@ -107,7 +126,7 @@ export default {
         top:0;
         width: 100%;
         height: 18px;
-        margin-bottom:15px;
+        /* margin-bottom:15px; */
         text-transform: uppercase;
         letter-spacing: .1rem;
         font-size: 1rem;
@@ -117,16 +136,15 @@ export default {
         }
     }
 
-    p{
+    div.paragraph{
+        position:relative;
         text-align:justify;
         letter-spacing: .0rem;
         line-height: 20px;
         font-size: .9rem;
         font-family: $primary-font;
         font-weight:lighter;
-        height:fit-content;
-
-
+        height:calc( 100% - 33px);
 
         @media(min-width:500px){
             font-size: 1rem;
@@ -137,13 +155,8 @@ export default {
              line-height: 30px;
         }
 
-        span {
-            width:100%;
-        }
+        .description {}
 
-
-
-      
         .longTextCover{
             position: absolute;
             bottom:0;
@@ -165,37 +178,51 @@ export default {
 .background.displayText{
 
     position: absolute;
-    opacity: 0;
     padding:30px;
-    width:100%;
+    width:calc(100% - 8px);
     height:100%;
-    left:0;
-    top:0; 
+    left:8px;
+    bottom:-100%; 
     overflow: scroll;   
-
+    animation: displayText .5s 0s forwards;
+  
     &.show{
         opacity: 1;
+    }
+
+    @keyframes displayText {
+        0%{
+            bottom:-100%; 
+        }
+        100%{   
+            bottom:0% 
+        }
     }
     
     .closeButton{
         position: absolute;
         display: unset;
-        top:0px;
+        top:10px;
         right:30px;
         font-size: 14px;
         padding:5px 8px;
         border:grey solid thin;
         border-radius: 5px;
+        cursor: pointer;
     }
 
     h3{}
 
-    p{
+    div{
         span {}      
         .longTextCover{
             display: none;
 
         }
+    }
+
+    div.paragraph{
+        height:fit-content;
     }
 }
 

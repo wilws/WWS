@@ -2,6 +2,8 @@
     
         <div class="left-wrapper">
 
+           
+
             <header-component
                 :scrollToPage= scrollToPage
                 :id= id
@@ -28,6 +30,7 @@
                 :backgroundColor = backgroundColor
                 :projectDescription= projectDescription
                 :fontColor = fontColor
+                :buttonColor = buttonColor
             />
 
 
@@ -60,9 +63,19 @@ export default {
     height:100%;
     display: flex;
     flex-direction: column;
+    gap:50px;
+    padding:30px;
+    box-sizing: border-box;
+    overflow: hidden;
 
-    @media(min-width: 1134px){
+    /* @media(min-width: 1134px){
+        width:60%;
+    } */
+
+     @media(min-width: 1020px){
         width:60%;
     }
+
+
 }
 </style>

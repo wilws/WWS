@@ -27,23 +27,13 @@
 
             <!-- slot 2-->
             <template v-slot:slot2>
-                <div class="slot-wrapper">
-                    <div class="title-wrapper">
-                        <div class="title">
-                            <h1 v-html="mainTitle"></h1>
-                            <h3>{{ subTitle }}</h3>
-                        </div>
-                    </div>
-                    <div class="content-wrapper">
-                        <div class="video-wrapper">
-                            <video loop autoplay muted controls>
-                                <source :src="require('@/assets/img/projects/web_project_3/optionkatze2.mp4')" type="video/mp4">
-                            </video>
-                        </div>
-                    </div>
-                </div>
+               <slot-two
+                    :isShow="slotTwoIsShow"
+               />
             </template>
             <!-- end of slot 2 -->
+
+     
 
         </rotation-layout>
     </section>
@@ -51,8 +41,9 @@
 
 <script>
 
+import SlotTwo from "../OptionalKatzeIIWebProject3Components/SlotTwo.vue";
 export default {
-
+    components:{SlotTwo},
     mounted(){
         // pass proprs to "rotation-layout" slot
         this.$refs.rotationLayoutRef3.buttonSetting = { 
@@ -61,10 +52,15 @@ export default {
         }
         this.$refs.rotationLayoutRef3.boxClass = ".web-project-3 .space .box";
     },
+    provide(){
+        return {
+            updateRotateDeg:this.updateRotateDeg
+        }
+    },
     data(){
         return {
             // pass proprs to "project-page-layout" child component
-            mainTitle : "Web Project 3",
+            mainTitle : "Django Project",
             subTitle: "2019-OPTION KATZE II",
             linkToProjectDescription: "View Video Demo",
             projectIconUrl: require('@/assets/img/projects/web_project_3/logo.png'),
@@ -83,7 +79,11 @@ export default {
             "The purpose of building this app is to see whether it is really profitable if trading disciplinarily  with those TA indicators."+
             "<br>"+
             "<br>"+
-            "There is a video demo. By clicking  “View Video Demo” button above, you can see what will happen if buying stock “0002.hk” during RSI is lower than 20 and selling when it is higher than 70.  It showed that in the end it is a profitable strategy. But it doesn’t mean that we can have the same positive result if adopting the same strategy on other assets."
+            "There is a video demo. By clicking  “View Video Demo” button above, you can see what will happen if buying stock “0002.hk” during RSI is lower than 20 and selling when it is higher than 70.  It showed that in the end it is a profitable strategy. But it doesn’t mean that we can have the same positive result if adopting the same strategy on other assets.",
+            rotateDeg:0,
+            slotTwoIsShow:false,
+            slotThreeIsShow:false,
+            slotFourIsShow:false,
             }
     },
     methods:{
@@ -93,6 +93,29 @@ export default {
             setTimeout(() => {
                 this.$refs.rotationLayoutRef3.rotate('forward');
             }, 200);
+        },
+        updateRotateDeg(deg){
+            this.rotateDeg = deg;
+            this.unsetSlotIsSHow();
+            switch (deg){
+                case 0:
+                    this.unsetSlotIsSHow();
+                    break;
+                case -90:
+                    this.slotTwoIsShow = true;
+                    break;
+                case -180:
+                    this.slotThreeIsShow = true;
+                    break;
+                case -270:
+                    this.slotFourIsShow = true;
+                    break;
+            }
+        },
+        unsetSlotIsSHow(){
+            this.slotTwoIsShow = false
+            this.slotThreeIsShow = false
+            this.slotFourIsShow = false
         },
 
     }

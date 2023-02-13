@@ -1,5 +1,6 @@
 <template>
     <div class="header" :class="{show:scrollToPage }">
+   
             <div class="left-side" >
                 <h1 v-html="mainTitle"></h1>
                 <h3>{{ subTitle }}</h3>
@@ -15,7 +16,8 @@
 
 <script>
 export default {
-    props:['mainTitle','subTitle','buttonColor','linkToProjectDescription','projectIconUrl','scrollToPage','id','fontColor']    
+    props:['mainTitle','subTitle','buttonColor','linkToProjectDescription','projectIconUrl','scrollToPage','id','fontColor'],
+    inject:['workDisplay']
 }
 </script>
 
@@ -25,9 +27,10 @@ export default {
 .header {
     position:relative; 
     width:100%;     
+    height:fit-content;
     display: flex;
     justify-content: space-between;
-    margin-bottom:50px;
+    /* margin-bottom:50px; */
 
     .left-side{
         position: relative;

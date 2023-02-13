@@ -3,8 +3,7 @@
 
         <div class="header">
             <h1>Skill Set</h1>
-            <h3>Here are the programming languages and 
-                <br>software that I use for web application development. 
+            <h3>Here are the tools that I use for web application development. 
             </h3>
 
             <div class="card-switcher">

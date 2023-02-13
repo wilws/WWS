@@ -1,7 +1,6 @@
 <template>
     <section class="index-page" id="index">
 
-
         <div class="img-wrapper">
             <div class="name">
                 <h1>WAISHUN</h1>
@@ -12,30 +11,33 @@
             </div>
         </div>
 
-        <div class="introduction-wrapper">
-            <div class="above-intro"></div>
-            <div class="introduction">
-                <b class="subtitle">About Me</b>
-                <br>
-                I am Wai Shun WONG, a full stack web developer. 
-                <br><br>
-                I am proficient in constructing frontend application with ReactJs, VueJs, HTML and CSS/SCSS. For the backend, I have experience with using Python＋Django or NodeJs＋ExpressJs framework to construct REST API. I also have knowledge to connect application to MySQL , MongoDB and PSQL to preform CRUD.
-                <br><br>
-                More recently, I have been attracted by the trend of blockchain technology, and have completed a course in Solidity & Ethereum. This has brought more fun and enjoyment to my coding journey.
-                <br><br>
+        <main class="introduction-wrapper">
+            <span class="above-intro"></span>
+            <article class="introduction">
 
-                <b class="subtitle">Education Background</b>
-                <br>
-                After obtaining a Bachelor’s Degree in Biology in Hong Kong, I pursued a Postgraduate Diploma in Investment Management and Financial Intelligence. The scientific background helps me a lot in logical thinking and the knowledge obtained from my postgraduate diploma always stimulates me to think what programming can do in the financial industry.
-                <br><br>
-                I am highly passionate about learning & creating and applying newly absorbed knowledge to solve problems brings me a great satisfaction.
-                <br><br>
-                <b class="subtitle">Contact</b>
-                <br>
-                Email : wilson.ws.pro@gmail.com<br>
-                Github : https://github.com/wilws/
-          </div>
-        </div> <!-- end of introduction-wrapper -->
+                <section>            
+                    <h3 class="subtitle">ABOUT ME</h3>
+                    <p> I am Wai Shun WONG, a full-stack web developer. </p>
+                    <p> I believe that the best way to grow is to embrace new challenges. Shortly after graduating from University, I taught myself to be a PHP Web Programmer. Then, I changed my profession to Health Inspector of the Hong Kong Government. To explore more in life, my latest challenge now is to restart my life in the United Kingdom. </p>
+                    <p>With possessing a passion for coding, I continuously expand my knowledge in software development from a variety of sources. This thirst for knowledge and self-improvement help me a lot in understanding coding practices. I believe all the knowledge that I have absorbed can assist me to deliver high-quality products. </p>
+                </section>
+
+                <section>   
+                    <h3 class="subtitle">EDUCATION BACKGROUND</h3>
+                    <p>To catch up with modern technology, I enrolled in a web programming course organised by Northcoders, a listed corporation providing training programs for software development.</p>
+                    <p>Besides attending a course in the physical classroom, I enrolled, all these years, in various online courses - from web/mobile application development to blockchain technology - in Udemy. I am highly passionate about learning and creating. Applying newly absorbed knowledge to solve problems brings me great satisfaction. </p>
+                </section>   
+
+                <section>   
+                    <h3 class="subtitle">CONTACT</h3>
+                    <ul>
+                    <li>Email: wilson.ws.pro@gmail.com </li>
+                    <li>Blog: https://wilsonsdevnotes.blogspot.com</li>
+                    <li>Github: https://github.com/wilws/</li>
+                    </ul>
+                </section>   
+          </article>
+        </main> <!-- end of introduction-wrapper -->
     </section>
 </template>
 
@@ -259,14 +261,19 @@ export default {
                 padding:2rem;
                 @include contentFontSetting_760px();
             }
+
+            section{
+                min-height: unset;
+                margin-bottom:20px;
             
-            b{
-                font-weight: bolder;
-                // text-decoration: underline;
-                text-transform: uppercase;
-                letter-spacing: .1rem;
-                font-family: 'Courier New', Courier, monospace;
-          
+                b{
+                    font-weight: bolder;
+                    // text-decoration: underline;
+                    text-transform: uppercase;
+                    letter-spacing: .1rem;
+                    font-family: 'Courier New', Courier, monospace;
+            
+                }
             }
         }
     }

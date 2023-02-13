@@ -29,12 +29,12 @@
 export default {
     data(){
         return {
-            mainTitle : "Web Project 1",
+            mainTitle : "Vue Project",
             subTitle: "2022-ELLOW TRADITION",
             linkToProjectDescription: "Go to the Web Page",
             projectIconUrl: require('@/assets/img/projects/web_project_1/logo.png'),
             FrontEndTechList: ['HTML+CSS','Javascript','VueJs/Vue-Cli'],
-            BackEndTechList: ['NodeJs','ExpressJs', 'MongoDB'],
+            BackEndTechList: ['NodeJs (ExpressJs)', 'MongoDB'],
             DesignStyleList: ['REST API', 'JWT','Stripe API'],
             mediaType:"video",
             mediaDisplayUrl: require('@/assets/img/projects/web_project_1/ellow_video.mp4'),

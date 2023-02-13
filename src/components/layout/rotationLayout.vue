@@ -8,7 +8,7 @@
             <div v-if="hasSlot1" class="face face1"><slot name="slot1"></slot></div>
             <div v-if="hasSlot3" class="face face2"><slot name="slot3"></slot></div>
             <div v-if="hasSlot4" class="face face3"><slot name="slot4"></slot></div>
-            <div v-if="hasSlot2" class="face face4"><slot name="slot2"></slot></div>
+            <div v-if="hasSlot2" class="face face4" ref="slot2inBox"><slot name="slot2"></slot></div>
         </div>
     </div>
 </template>
@@ -50,9 +50,9 @@ export default {
     },
     mounted(){
         // Responsive Setting                       
-        window.addEventListener("resize",this.resizeAdjustor);    // Always ready to trigger "resize()" when width change. 
-
+        window.addEventListener("resize",this.resizeAdjustor);    // Always ready to trigger "resize()" when width change.      
    },
+   inject:['updateRotateDeg'],
 
     methods:{
         rotate(direction){   
@@ -73,7 +73,8 @@ export default {
                     break;
             }
             document.querySelector(this.boxClass).style.transition = "transform 1s";  // When rotate browser, we want to see the rotation
-            this.rotateController();      
+            this.rotateController();  
+            this.updateRotateDeg( this.rotateDeg );
         },
 
         resizeAdjustor(){
@@ -256,6 +257,7 @@ export default {
 
 $boxWidth : 100vw;
 $boxHeight: 100vh;
+
 $perspective: $boxWidth * 5;
 
 $translateDistanceFront : $boxWidth/2;
@@ -386,6 +388,8 @@ $translateDistanceRight : $boxWidth/2;
     // height:$boxHeight;
     // height:100%;
 
+    /* max-width:1700px; */
+
     min-height: 100vh;
     height:auto;
     
@@ -395,8 +399,11 @@ $translateDistanceRight : $boxWidth/2;
     -webkit-transform: translateZ(-$translateDistanceFront);
     -webkit-transform-style: preserve-3d;
     -webkit-transform-origin: center;
-    // transform: translateZ(-$translateDistanceFront) rotateY(-180deg);
+    
+    /* -webkit-transform: translate3d(0, 0, -$translateDistanceFront); */
+    /* transform: translateZ(-$translateDistanceFront) rotateY(-90deg); */
 
+    
 
     @mixin setting{
         position:absolute;
@@ -426,6 +433,7 @@ $translateDistanceRight : $boxWidth/2;
         -webkit-transform: translateZ($translateDistanceFront);
         // background-color: white;
         // z-index:1;
+        
 
         @include pseudoSetting();
     }

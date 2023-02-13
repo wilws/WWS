@@ -3,6 +3,7 @@
     <!-- secction -->
     <div class="section" :style="{ color:fontColor, backgroundColor:backgroundColor}">
 
+        <div class="line" :style="{backgroundColor:buttonColor}" />
         <left-part 
             :mainTitle = mainTitle
             :subTitle = subTitle
@@ -70,6 +71,11 @@ export default {
             this.scrollToPageDetection();
         });
     },
+    provide(){
+        return {
+            workDisplay: this.workDisplay
+        }
+    },
 
     methods:{
         workDisplay(){
@@ -100,6 +106,14 @@ export default {
     border-top: rgb(0, 0, 0) thick solid;
     overflow: hidden;
     @include row-horizontal-center();
+
+    .line{
+        position: absolute;
+        width:5px;
+        height:100vh;
+        left:0;
+        right:0;
+    }
 }
 
 

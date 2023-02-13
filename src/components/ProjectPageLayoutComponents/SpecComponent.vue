@@ -1,5 +1,5 @@
 <template>
-    <div class="spec" :class="{show:scrollToPage}" v-if="!!FrontEndTechList.length">
+    <div class="spec" :class="{show:scrollToPage}" v-if="hasSpec">
 
         <h3 >Specification</h3>
 
@@ -35,7 +35,19 @@
 
 <script>
 export default {
-    props:['FrontEndTechList','BackEndTechList','DesignStyleList','scrollToPage','id']    
+    props:['FrontEndTechList','BackEndTechList','DesignStyleList','scrollToPage','id'],
+    data(){
+        return {
+            hasSpec:false
+        }
+    },
+    mounted(){
+        if (this.FrontEndTechList.length === 0 && this.BackEndTechList.length === 0 && this.DesignStyleList.length === 0){
+            this.hasSpec = false;
+        } else {
+            this.hasSpec = true;
+        }
+    }    
 }
 </script>
 
@@ -46,12 +58,15 @@ export default {
     position: relative;
     width:100%;
     margin-bottom:10px;
+    height:fit-content;
     opacity:0;
     transition:opacity 1s 1s;
     display: flex;
+    flex-direction: row;
     flex-wrap: wrap;
     padding-top: 38px;
-    justify-content: space-between;
+    gap:3%;
+    /* justify-content: space-between; */
 
     @media(min-width:500px){
         padding-top: 36px;
@@ -127,11 +142,11 @@ export default {
                 font-family: Helvetica;
                 font-weight: lighter;
                 @media(min-width:500px){
+                    font-size: .8rem;
+                }
+                @media(min-width:800px){
                     font-size: 1rem;
                 }
-                /* @media(min-width:800px){
-                    font-size: 1rem;
-                } */
             }
         }
     }

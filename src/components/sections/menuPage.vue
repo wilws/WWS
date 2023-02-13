@@ -1,10 +1,8 @@
 <template>
+<div>
+    <div v-show="showMenuBtn" class="menu-button"></div>
 
-<div class="menu-button"></div>
-    
-
-    <section class="menu close" id="menu">
-        
+    <section class="menu close" id="menu">    
         <button @click="menuController" class="close-button">Close</button>
         <div class="menu-items-wrapper">
             <menu-item class="menu-item"
@@ -16,22 +14,19 @@
                 @pageSelected = "menuController"
             ></menu-item>
         </div>
-
-        <!-- <div class="contact">
-            <p>github : https://github.com/wilws</p>
-            <p>email : wilson.ws.pro@gmail.com</p>
-        </div> -->
     </section>
+    </div>
 </template>
 
 
 
 <script>
-import MenuItem from "../layout/menuItemLayout.vue";
+import MenuItem from "./menuPageComponents/menuItemLayout.vue";
 export default {
     components:{
         MenuItem
     },
+    props:['showMenuBtn'],
     data(){
         return{
             id: "#menu",
@@ -39,13 +34,18 @@ export default {
             items : {
                 "About": ["Who Am I","#index"],
                 "Skill Set":["Skills That I Have","#skill-set-page"],
-                "Web Project 1":["E-Commerce Website Using Vue.js + Node.js + Express.js","#web-project-1"],
-                "Web Project 2":["Option Strategies Analysis Web Application Using Python + Django","#web-project-2"],
-                "Web Project 3":["Back Testing Web Application Using Python + Django","#web-project-3"],
-                "Web Project 4":["Simple HTML + CSS + JS Website","#web-project-4"],
-                "Interior Design<br>Project":["Build Up a Studio","#interior-design-project-1"],
-                "Graphic Design<br>Project":["Dessert Shop Re-Branding","#graphic-design-project-1"],
-                "Course<br>Assignment":["Assignments done during<br>studying online course","#assignment"],
+                "React Project <br> - NC NEWS":["News Share Platform Built by ReactJs & NodeJs","#web-project-7"],
+                "ReactNative Project <br> - Tarot Journal": ["Tarot Reading App Built by React Native & NodeJs","#react-native-project-1"],
+                "React Project  <br> - NC Gallery":["Art Share Platform Built by ReactJs","#web-project-6"],
+                "Docker Project  <br> -  PHP Server":["Dockerised, Cross-Containers Application","#web-project-5"],
+                "Python Project  <br> - Company Data Scrapper":["Scraper Data from web by Python and Selenium","#data-project-1"],
+                "Vue Project  <br> -  Ellow Tradition":["E-Commerce Website Using Vue.js + Node.js","#web-project-1"],
+                "Django Project  <br> -  Option Katze ":["Option Strategies Analysis Web Application Using Python + Django","#web-project-2"],
+                "Django Project  <br> -  Option Katze II":["Back Testing Web Application Using Python + Django","#web-project-3"],
+                "Javascript Project  <br> -  LongLife ":["Simple HTML + CSS + JS Website","#web-project-4"],
+                "Graphic Design   <br> -  Joyful House":["Dessert Shop Re-Branding","#graphic-design-project-1"],
+                "Interior Design   <br> -  My Studio":["Build Up a Studio","#interior-design-project-1"],
+                "Course Assignment":["Assignments done during<br>studying online course","#assignment"],
                 
             }
         }

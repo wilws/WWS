@@ -1,7 +1,7 @@
 <template>
     <div class="right-wrapper">
         <div v-if="mediaType == 'video'" class="vidoe">
-            <video :key="video" loop autoplay muted>
+            <video :key="video" loop autoplay muted playsinline>
                 <source :src="mediaDisplayUrl" type="video/mp4">
             </video>
         </div>
@@ -25,7 +25,8 @@ export default {
 
     display: none;
    
-    @media(min-width: 1134px){
+    /* @media(min-width: 1134px){ */
+         @media(min-width: 1020px){
         position: relative;
         width:40%;
         height:100vh;  
@@ -62,7 +63,7 @@ export default {
         img {
             height: 100%;
             width:100%;
-            object-fit: cover;  
+            object-fit:cover;  
         }
     }
 }
