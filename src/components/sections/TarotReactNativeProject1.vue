@@ -30,13 +30,11 @@
                 <slot-two
                     :isShow="slotTwoIsShow"
                 />
-             
             </template>
             <!-- end of slot 2 -->
 
             <!-- slot 3-->
             <template v-slot:slot3>
-              
                 <slot-three/>
             </template>
             <!-- end of slot 3 -->

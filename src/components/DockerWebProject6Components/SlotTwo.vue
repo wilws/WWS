@@ -57,14 +57,14 @@
                 <img :src="require('@/assets/img/projects/docker_web_project_6/img6_vue.png')" alt=""/>
                 <p>There are two step when dockerising vue container: </p>
                 <p>1 - Build app: change vue files to HTML, CSS and JS</p>
-                <p>2 - Move the above files (HTML, CSS and JS) to another Nginx Server (not the one in Step 4 </p><br>
-                <p>Now we have one Nginx container acts as backend hosting php script (Step-4); another Nginx cotainer is hosting the vue (frontend) application. Both end are communicating by REST API.</p>
+                <p>2 - Move the above files (HTML, CSS and JS) to another Nginx Server (not the one in Step 4 )</p><br>
+                <p>Now we have one Nginx container acts as backend hosting php script (Step-4); another Nginx cotainer is hosting the vue (frontend) application. Both ends are communicating by REST API.</p>
             </section>
 
             <section class="summary">
                 <h3>Clone the Project</h3>
                 <p>You can git clone the project from <a href="https://github.com/wilws/docker2_cross_container_php-mysql-nginx-vue">here</a>.</p>
-                <p> After having cloned in your machine, you can run all four containers by simpliy typing :</p>
+                <p> After cloning the project in your machine, you can run all four containers by simpliy typing :</p>
                 <p class="code">docker-compose up</p>
                 <p> The go to "http://localhost:8080", you should see the app is running like: </p>
                 <img :src="require('@/assets/img/projects/docker_web_project_6/img7_run.png')" alt=""/><br><br>
@@ -168,7 +168,7 @@ export default {
                     font-size: 1.4rem;
                 }
                 @media(min-width:1000px){
-                    font-size: 1.6rem;
+                    /* font-size: 1.6rem; */
                 }
             }
             p{
@@ -189,7 +189,7 @@ export default {
                     line-height: 30px;
                 }
                 @media(min-width:1000px){
-                    font-size: 1.4rem;
+                    /* font-size: 1.4rem; */
                 
                 }
             }

@@ -42,6 +42,7 @@
 <script>
 
 import SlotTwo from "../OptionalKatzeIIWebProject3Components/SlotTwo.vue";
+import description from "../OptionalKatzeIIWebProject3Components/description";
 export default {
     components:{SlotTwo},
     mounted(){
@@ -64,22 +65,16 @@ export default {
             subTitle: "2019-OPTION KATZE II",
             linkToProjectDescription: "View Video Demo",
             projectIconUrl: require('@/assets/img/projects/web_project_3/logo.png'),
-            FrontEndTechList: ['HTML+CSS','Javascript'],
+            FrontEndTechList: ['JQuery','Bootstrap'],
             BackEndTechList: ['Python','Django', 'MySQL'],
-            DesignStyleList: ['Bootstrap','JQuery'],
+            DesignStyleList: ['Yahoo Finance API'],
             mediaType:"image",
             mediaDisplayUrl: require('@/assets/img/projects/web_project_3/cover.png'),
             backgroundColor:"rgb(0, 0, 0)",
             fontColor:"white",
             id: "#web-project-3",
             buttonColor:"#EAAB15",
-            projectDescription :  
-            "This is an application to backtest the profitability of adopting different Technical Analysis (TA) strategies, like RSI, MACD, SMA,etc."+
-            "<br>"+
-            "The purpose of building this app is to see whether it is really profitable if trading disciplinarily  with those TA indicators."+
-            "<br>"+
-            "<br>"+
-            "There is a video demo. By clicking  “View Video Demo” button above, you can see what will happen if buying stock “0002.hk” during RSI is lower than 20 and selling when it is higher than 70.  It showed that in the end it is a profitable strategy. But it doesn’t mean that we can have the same positive result if adopting the same strategy on other assets.",
+            projectDescription :  description.background,
             rotateDeg:0,
             slotTwoIsShow:false,
             slotThreeIsShow:false,

@@ -12,8 +12,8 @@ export default {
         <u>Features of the application:</u>  </br>
         - Users can view the articles </br>
         - Users can leave a comment on articles </br>
-        - Users can vote for articles </br>
-        - Users can share articles </br>
+        - Users can vote for articles</br>
+        - Users can share articles</br>
         - Users can sort the article by date, title or authors, etc.
         </br>
         </br>

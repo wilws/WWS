@@ -40,6 +40,7 @@
 <script>
 
 import SlotTwo from "../OptionalKatzeWebProject2Components/SlotTwo.vue";
+import description from "../OptionalKatzeWebProject2Components/description";
 
 
 export default {
@@ -79,14 +80,7 @@ export default {
             buttonColor:"#0099AF",
             id: "#web-project-2",
             projectCode:'Web_Project_2',
-            projectDescription :
-            "This is a web application to test the profit-loss of different option strategy."+
-            "<br>"+
-            "The application scraped option price data from internet, calculated contract price and volatility, formed different option strategies by longing or shorting  different contract at different strike price."+
-             "<br>"+
-            "<br>"+
-            "The application sometimes could dig out arbitrage chance. Please click the 'View Project Description' button above to see a bit more."+
-            "The application was built by Python with Django framework and styled with Bootstrap. BeautifulSoap was used for web scrapping. It was deployed on Google AppEngine and also joined Google AdSense, wishing to earn some to cover the expensive hosting cost.  However,  I am not so fascinated in option trading now.  There is no more maintenance on the application and the app is not able to function properly yet. Nevertheless,  it is a valuable experience to apply programming knowledge to tackle problem encountered in other sector.",
+            projectDescription :description.background,
             rotateDeg:0,
             slotTwoIsShow:false,
             slotThreeIsShow:false,

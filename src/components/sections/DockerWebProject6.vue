@@ -43,6 +43,8 @@
 
 import SlotTwo from "../DockerWebProject6Components/SlotTwo.vue";
 
+import description from "../DockerWebProject6Components/description";
+
 export default {
     components:{SlotTwo},
     mounted(){
@@ -69,14 +71,7 @@ export default {
             DesignStyleList: ['Docker Composer', 'Docker Bind Mounts'],
             mediaType:"image",
             mediaDisplayUrl: require('@/assets/img/projects/docker_web_project_6/cover_image.png'),
-            projectDescription :
-            "I built this website just for practising purpose after the completion of my NodeJs course."+
-            "<br>"+
-            "<br>"+
-            "I ran the company 'Ellow Tradition', an e-commerce company selling interesting cultural handcraft, long time ago.  The original website of this company was built by PHP + AJAX + MySQL, after having learnt PHP from books on 2014. The website helped me to get an PHP web developer job in a radio-control (R/C) hobby Company - AsiaTees."+
-            "<br>"+
-            "<br>"+
-            "To refresh web development technique, I re-design and re-built the website by using modern tools. Adobe XD is used to design the interface. VueJs is applied as frontend technology and NodeJs + ExpressJs framework with MongoDB are used in backend. Both ends are communicated by REST API. JWT is used for authentication. Stripe is adopted for payment gateway. The website is deployed on Heroku.",
+            projectDescription :description.background,
             backgroundColor:"rgb(212, 228, 246)",
             fontColor:"rgb(0, 0, 0)",
             buttonColor:"rgb(39, 39, 39)",
@@ -98,7 +93,6 @@ export default {
         updateRotateDeg(deg){
             this.rotateDeg = deg;
             this.unsetSlotIsSHow();
-            console.log(deg,"<< deg")
             switch (deg){
                 case 0:
                     this.unsetSlotIsSHow();

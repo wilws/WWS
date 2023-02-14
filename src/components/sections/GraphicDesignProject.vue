@@ -47,11 +47,11 @@
                             <div class="new-icon"><img :src="require('@/assets/img/projects/design_project_1/logo.png')"></div>
                         </div>
                         <p>
-                            To re-brand the company, the very first step is to have a new logo. 
-                            There are five balloons in the original logo representing the 5 establishers of the dessert shop. 
-                            I kept this element as well as the hexagon shape, fusing them with minimalistic style and add the slogan “Sweeten up your life”  , 
-                            expressing  “We know life is tough, let my dessert to give you a little bit sweetness”</p>
-                        <!-- <div class="ai-img"><img :src="require('@/assets/img/projects/design_project_1/bg-img-icon.png')"> </div> -->
+                           To re-brand the company, the very first step is to create a new logo. 
+                           There are five balloons in the original logo representing the 5 establishers of the dessert shop. 
+                           I kept this element as well as the hexagon shape, fusing them with a minimalist style and adding the slogan <b>“Sweeten up your life”</b>, 
+                           expressing “We know life is tough, please allow my dessert to give you at least a little taste of sweetness”
+                        </p>
                     </div>
  
                 </div>
@@ -65,8 +65,11 @@
                     <div class="col col-1">
                         <div class="title-wrapper">
                             <h1 class="title">BOX WITHOUT GLUE</h1>
-                            <p>I love the asian architecture’s “Nailless” concept which always connects to the embodiment of "seamlessness”. Hence all the parts of the box were gule-less so as to express the idea - “A treasure-like cake should be placed in a seamless box”. 
-After spending numerous time on studying packaging, I drafted my own version’s gule-less box.</p>
+                            <p>
+                                All the parts of the box are glue-less. 
+                                It is to express the idea - “A treasure-like cake should be placed inside a seamless box”. 
+                                After spending numerous time of studying packaging, I drafted my own version’s glue-less box.
+                            </p>
                         </div>
                         <div class="img-wrapper">
                             <img :src="require('@/assets/img/projects/design_project_1/draft.png')">
@@ -90,14 +93,15 @@ After spending numerous time on studying packaging, I drafted my own version’s
                         <div class="title-wrapper">
                             <h1 class="title">MANUFACTURING</h1>
                             <p>
-                                After the testing, I contacted packaging manufacturers in China to make the box real. Dealing with tricky Chinese manufacturers was the most challenging part in the whole process. In the end, I had tried 3 manufacturers to get the satisfactory result.
-                                <br> <br>
-                                
+                             After testing the prototype, 
+                             I contacted packaging manufacturers in mainland China to make the box real. 
+                             Dealing with tricky Chinese manufacturers was the most challenging part of the whole process. 
+                             Having tried several manufacturers, I finally got what I wanted. 
+                            </p>
+                       
+                            <p>    
                                 The logo was silver plated making it more elegant.
-
-
-
-</p>
+                            </p>
                         </div>
                         <div class="img-wrapper">   
                             <div class="img"><img :src="require('@/assets/img/projects/design_project_1/finish2.jpg')"></div>
@@ -131,10 +135,10 @@ export default {
             fontColor:"Black",
             buttonColor:"grey",
             id: "#graphic-design-project-1",
-            projectDescription :
-            "In the spring of 2019,  My friend Jason was struggling in his cake shop business.  Since the rent of Hong Kong is ridiculously high, he planned to switch the business mode from physical dessert shop to online cake shop.  He asked my assistance to transform the image of the shop. I accepted this challenge with alacrity."+
-            "<br><br>"+
-            "I re-designed the shop logo in minimalism style. Moreover Inspired by ancient Asian interlocking architecture concept - “Nailless”-  in construction,  I designed my own version’s “glue-less” cake box in order to put the brand on the high-end-track."
+            projectDescription :"In the spring of 2019, my friend Jason struggled in his cake shop business. Since the rent in Hong Kong is ridiculously high, he planned to switch the business mode from a physical dessert shop to an online cake shop. He asked my assistance to transform the image of the shop."+
+            "<br><br>"+ 
+
+"I re-designed the shop logo in a minimalist style. Moreover, inspired by the ancient Asian interlocking architecture concept “Nailless”,  I designed my own version’s “glue-less” cake box to put the brand on the high-end track."
         }
     },
     mounted(){

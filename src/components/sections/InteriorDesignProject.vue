@@ -37,13 +37,13 @@
                     <div>
                         <h1>A Messy Storage Room</h1>
                         <div class="content">
-                            The place that we rented was used as a store room.
+                            The place that we rented was used as a store room. 
                             <br>
                             <br>
-                            Dusty, scraped wall, worn carpet, dirty window and full of miscellaneous stuff, we were at first in question that was it really possible to use this place as our private harbour?
+                            Dusty, scraped wall, worn carpet, dirty window, and full of miscellaneous stuff, we were at first in question whether was it possible to use this place as our private harbor. 
                             <br>
                             <br>
-                            We started to study different information to learn how to do renovation. Finally we found that it was not as difficult as we though
+                            We started to study different information to learn how to do the renovation. Finally, we found that it was not as difficult as we thought
                         </div>
                     </div>
                 </div>
@@ -64,7 +64,7 @@
                         <h1>Planning</h1>
                     </div>
                     <div class="content">
-                        After acquiring knowledge from Internet, YouTube, books..etc, We roughly understood how to do plastering, construction of wooden structure, light and electricity stuff (well,yes,we knew it is dangerous...but we both are graduated from science background and believed in our knowledge. Don’t try it by yourself at home).
+                        After acquiring knowledge from the Internet, YouTube, books..etc, We roughly understood how to do plastering, construction of a wooden structure, and light and electricity stuff (well, yes, we knew it is dangerous...but we both graduated from a science background and believed in our knowledge. Don’t try it by yourself at home).
                        <br>
                        <br>
                        Having ensured that the renovation was within our ability, I started to learn how to use the software "SketchUp" to draw the layout. 
@@ -97,14 +97,13 @@
                 </div>
                 <div class="complete-wrapper">
                     <div class="content-wrapper">
-                        <h1> Desire , Knowledge and Action</h1>
+                        <h1>Desire, Knowledge, and Action</h1>
                         <div class="content">
-                            We finally spent 3 months to have our cozy studio completed. The whole process was so painful but the outcome was so satisfactory.
+                            We finally spent 3 months to have our cozy studio completed. The whole process was so painful but the outcome was so satisfactory. 
                             <br><br>
-                            This is such an unforgettable experience. We started from zero, from doubt. We had no knowledge of renovation at first. But, desire motivated us to pursue knowledge to make it real.
-
+                         This is such an unforgettable experience. We started from zero, from doubt. We did not know about the renovation at first. But, desire motivated us to pursue knowledge to make it real. 
                             <br><br>
-                            "Knowledge" and "Willingness to Learn" provide us confidence to act, to try and to achieve different things. ”Learning” can turn every chapter of life journey into an exciting adventure. The more I learn, the more experience that I can put into my life story. We are the sole writer of our life story. Never, Never, Never write a boring story. You don't have another chance to re-write it.
+                           "Knowledge" and "Willingness to Learn" provide us the confidence to act, to try, and to achieve different things. ”Learning” can turn every chapter of life's journey into an exciting adventure. The more I learn, the more experience I can put into my life story. We are the sole writer of our life stories. Never, Never, Never write a boring story. You don't have another chance to rewrite it.
                         </div>
                     </div>
                 </div>
@@ -192,8 +191,7 @@ export default {
             buttonColor:"Black",
             id: "#interior-design-project-1",
             projectDescription :
-            "In Hong Kong, it is quite hard to get a private place for relax since rental is so high in this tiny place. In 2015,  My friend ,Berry ,and I were so luckily to have a chance to rent a place in a factory area with a very economic price. However,  as mentioned, it was in a factory area, the place was “not fancy”, or be more accurate — “messy”. Let see how we 2 turned a messy store room to a cozy studio."
-
+            "In Hong Kong, it is quite hard to get a private place to relax since rent is so high in this tiny city. In 2015, My friend, Berry, and I were so lucky to have a chance to rent a place in a factory area at a very economic price. However, as mentioned, it was in a factory area, and the place was “not so fancy”, or be more accurate — “messy”. Let's see how we 2 turned a messy store room into a cozy studio."
         }
     },
     methods:{

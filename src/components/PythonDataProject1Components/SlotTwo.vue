@@ -16,11 +16,11 @@
                     </video>
                 </div>
                 <div class="description">
-                    <p>This is a demo video showing how the app automatically scrape company data from Morningstar.</p>
-                    <p>The application will click the relevant buttons on screen and download the reports wanted.</p>
-                    <p>Reports will be saved inside "data" folder.</p>
-                    <p>Compant data is so valuable in evaluating the performance , as well as the stock price, of the comapany.</p>
-                    <p class="warning">This app is for testing and non-profitable uses. Please subscribe service from morningstar in order to obtain company data for other uses. </p>
+                    <p>This is a demo video showing how the application automatically scrapes company data from Morningstar.</p>
+                    <p>The application will click the relevant buttons on the screen and download the reports wanted.</p>
+                    <p>Reports will be saved inside the "data" folder.</p>
+                    <p>Company data is so valuable in evaluating the performance, as well as the stock price, of the company.</p>
+                    <p class="warning">This application is for learning purposes only. Please subscribe service from morningstar to obtain company data for other uses.</p>
                 </div>
             </div>
     </div>
