@@ -18,14 +18,18 @@
                 <section>            
                     <h3 class="subtitle">ABOUT ME</h3>
                     <p> I am Wai Shun WONG, a full-stack web developer. </p>
-                    <p> I believe that the best way to grow is to embrace new challenges. Shortly after graduating from University, I taught myself to be a PHP Web Programmer. Then, I changed my profession to Health Inspector of the Hong Kong Government. To explore more in life, my latest challenge now is to restart my life in the United Kingdom. </p>
+                    <p> 
+                        I believe that the best way to grow is to embrace new challenges. Shortly after graduating from University, 
+                        I taught myself to be a PHP Web Programmer. Then, I changed my profession to Health Inspector of the Hong Kong Government. 
+                        To explore more in life, my latest challenge now is to restart my life in the United Kingdom. 
+                    </p><br>
                     <p>With possessing a passion for coding, I continuously expand my knowledge in software development from a variety of sources. This thirst for knowledge and self-improvement help me a lot in understanding coding practices. I believe all the knowledge that I have absorbed can assist me to deliver high-quality products. </p>
                 </section>
 
                 <section>   
                     <h3 class="subtitle">EDUCATION BACKGROUND</h3>
                     <p>To catch up with modern technology, I enrolled in a web programming course organised by Northcoders, a listed corporation providing training programs for software development.</p>
-                    <p>Besides attending a course in the physical classroom, I enrolled, all these years, in various online courses - from web/mobile application development to blockchain technology - in Udemy. I am highly passionate about learning and creating. Applying newly absorbed knowledge to solve problems brings me great satisfaction. </p>
+                    <p>Besides attending a course in the physical classroom, I enrolled, all these years, in various online courses - from web/mobile application development to blockchain technology. I am highly passionate about learning and creating. Applying newly absorbed knowledge to solve problems brings me great satisfaction. </p>
                 </section>   
 
                 <section>   

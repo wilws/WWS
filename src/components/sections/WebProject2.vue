@@ -1,5 +1,5 @@
 <template>
-    <section class="web-project-2" id="web-project-2">
+    <section class="web-project-2" id="web-project-2" >
         
         <rotation-layout ref="rotationLayoutRef2">
 
@@ -92,7 +92,7 @@ export default {
             document.querySelector(this.id).scrollIntoView();
             setTimeout(() => {
                 this.$refs.rotationLayoutRef2.rotate('forward');
-            }, 200);
+            }, 300);
         },
         updateRotateDeg(deg){
             this.rotateDeg = deg;

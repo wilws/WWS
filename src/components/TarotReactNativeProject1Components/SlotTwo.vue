@@ -1,5 +1,5 @@
 <template>
-    <div class="slot-2" ref="tarotReactNativeProject1Slot2">
+    <div class="slot-2" ref="tarotReactNativeProject1Slot2" @touchmove="scrolling" @touchstart="scrolling">
         <div class="header" >
             <header-title
                 :mainTitle="mainTitle"
@@ -16,9 +16,12 @@
      </div>
 </template>
 
+
 <script>
+
 import HeaderTitle from "../layout/HeaderTitle.vue";
 import TarotDocumentation from "./TarotDocumentation.vue";
+
 export default {
     props:['isShow'],
     components:{HeaderTitle,TarotDocumentation},
@@ -38,6 +41,11 @@ export default {
     mounted(){
         this.pageWheelerInit(this.$refs.tarotReactNativeProject1Slot2,this.isShow);
     },
+    methods:{
+        scrolling(event){
+            this.wheelFunction(event);
+        }
+    }
 }
 </script>
 
@@ -47,10 +55,12 @@ export default {
     width:100%;
     height:100%;
     padding:20px;
+    padding-bottom:100px;
     background-color: rgb(15, 4, 30);
     font-family:$tertiary-font;
     overflow-y: scroll;
     overflow-x: hidden;
+    z-index: 0;
   
     .header{
         position:relative;

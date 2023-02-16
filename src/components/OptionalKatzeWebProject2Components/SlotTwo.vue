@@ -1,5 +1,5 @@
 <template>
-    <div class="slot-2" ref="optionKatzeWebProjectSlot2">
+    <div class="slot-2" ref="optionKatzeWebProjectSlot2" @touchmove="scrolling" @touchstart="scrolling">
         
         <header>
             <header-title
@@ -77,6 +77,11 @@ export default {
     mounted(){
         this.pageWheelerInit(this.$refs.optionKatzeWebProjectSlot2,this.isShow);
     },
+    methods:{
+        scrolling(event){
+            this.wheelFunction(event);
+        }
+    }
 }
 </script>
 
@@ -90,8 +95,9 @@ section {
 .slot-2{
     position:relative;
     width:100%;
-    height:100%;
+    height:calc(100% + 30px);
     padding:20px;
+    padding-bottom: 100px;
     background-color: rgb(15, 4, 30);
     font-family:$tertiary-font;
     overflow-y: scroll;
@@ -109,7 +115,6 @@ section {
 
         position: relative;
         width:100%;
-        height:100%;
         margin-top:40px;
         padding-bottom:30px;
 
@@ -171,8 +176,10 @@ section {
                 position:relative;
                 color:white;
                 margin-bottom:10px;
+                
 
                 @media(min-width:500px){
+                    text-align: justify;
                     font-size: 1rem;
                     line-height: 25px;
                 }

@@ -137,7 +137,8 @@ export default {
 
 
                 @media (min-width:320px){
-                     font-size:.6rem;
+                     /* font-size:.6rem; */
+                     font-size: 0.8rem;
                 }
                 
                 @media (min-width:768px){

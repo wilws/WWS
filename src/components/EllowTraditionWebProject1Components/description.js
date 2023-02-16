@@ -27,12 +27,12 @@ export default {
   <br>
   <br>
   <b>Tools used in this project:</b></br>
-  In this project, <b>Adobe XD</b> was used to design the interface. 
-  <b>VueJs</b> was applied as frontend technology. 
-  <b>Vuex</b> was adopted for state management in frontend. 
-  <b>NodeJs in TypeScript</b> , <b>ExpressJs</b>, and <b>MongoDB</b> were used in the backend.  
-  <b>REST API</b>  was used to perform the communication between the server and client side. 
-  <b>JSON Web Token</b>  was used for authentication. 
-  <b>Stripe API</b> was adopted for the payment gateway. 
-  The website was deployed on <b>Heroku</b> originally but now changed to <b>Render</b>.`,
+  In this project, Adobe XD was used to design the interface. 
+  VueJs was applied as frontend technology. 
+  Vuex was adopted for state management in frontend. 
+  NodeJs in TypeScript , ExpressJs, and MongoDB were used in the backend.  
+  REST API  was used to perform the communication between the server and client side. 
+  JSON Web Token  was used for authentication. 
+  Stripe API was adopted for the payment gateway. 
+  The website was deployed on Heroku originally but now changed to Render.`,
 };

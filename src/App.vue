@@ -61,10 +61,13 @@ export default {
   },
 
   mounted(){
-    this.disableIOSScalability();            // [mixins function]. to stop the ISO scalability during rotation
-    window.addEventListener('resize',()=>{   
-        this.defaultBoxes();                // [mixins function]. to turn all the boxex back to homepage
-    });
+    this.disableIOSScalability();              // [mixins function]. to stop the ISO scalability during rotation
+    // window.addEventListener('resize',()=>{   
+    //     this.defaultBoxes();                // [mixins function]. to turn all the boxex back to frontpage (slot1)
+    // });
+
+ 
+                     
   },
   data(){
     return {
@@ -100,20 +103,22 @@ export default {
     // scrollbar-width: none;  
 }
 
-// *::-webkit-scrollbar {
-//   display: none;
-// }
-
-// body {-webkit-text-size-adjust: none;}
-
 body {
   position:relative;                  // necessary in ISO
     -webkit-text-size-adjust: 100%;
+    -webkit-user-drag: none;
+    overscroll-behavior: none;
+    /* overflow: scroll; */
 }
 
 html{
     // font-size:62.5%;
     scroll-behavior: smooth;
+    -webkit-user-drag: none;
+    overscroll-behavior: none;
+        -webkit-user-drag: none;
+    overscroll-behavior: none;
+    /* overflow: hidden; */
 }
 
 

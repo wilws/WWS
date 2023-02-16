@@ -199,7 +199,7 @@ export default {
             document.querySelector(this.id).scrollIntoView();
             setTimeout(() => {
                 this.$refs.rotationLayoutRef5.rotate('forward');
-            }, 200);
+            }, 300);
         },
     }
 }
@@ -1057,8 +1057,9 @@ export default {
 
         width: 100%;
         height:100%;
+        /* border:red thin solid; */
 
-        padding: 1rem 1.3rem 1.3rem 1rem;
+        /* padding: 1rem 1.3rem 1.3rem 1rem; */
         display: flex;
         flex-direction: column;
         // justify-content: center;
@@ -1090,6 +1091,7 @@ export default {
                 // border: thin solid red;
                 font-family: $primary-font;
                 color:$grey ;
+                padding:20px;
                 text-align: center;
                 @media(min-width:320px){
                     @include contentFontSetting_320px();
@@ -1100,7 +1102,7 @@ export default {
                     text-align: center;
                 }
                 @media(min-width:1020px){
-                    padding:4rem;
+                    /* padding:4rem; */
                 }
             }
         }

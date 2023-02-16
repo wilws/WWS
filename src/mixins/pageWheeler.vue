@@ -5,6 +5,10 @@ export default {
             moveingExtent : 0,
             ref : null,
             pageIsShow : false,
+            scrollSpeed : 100,
+            clientYStart : 0,
+            clientYEnd : 0,
+            currentYValue : 0,
         }
     },
     
@@ -25,9 +29,50 @@ export default {
             this.ref = refId;
         },
 
+        wheelFunction(e){
+
+            if (!this.pageIsShow) return ;
+
+        
+            if (e.type === "touchstart") {
+                // Just need to get the start point.
+                // No need to preform furher action
+                this.clientYStart =  e.touches[0].clientY ;
+                return;  
+            }
+
+            if (e.type !== "touchmove") return;
+
+            // Below only process when Event is "touchmove"
+
+          
+            const clientHeight = this.ref.clientHeight;
+            const scrollHeight = this.ref.scrollHeight
+    
+
+            // Find out the moving distance
+            this.clientYEnd =  e.changedTouches[0].clientY ;
+            const moveDistance = this.clientYStart - this.clientYEnd;
+ 
+            // divided by 20 means reduced scrolling speed
+            this.currentYValue += moveDistance/20;
+
+            // if scroll Y value over the height of the div
+            if (this.currentYValue > (scrollHeight)) {
+                this.currentYValue = scrollHeight-clientHeight;
+            }
+
+            // if scroll Y value beyond the top
+            if (this.currentYValue < 0) {
+                this.currentYValue = 0;
+            }
+
+            this.ref.scrollTo(0,this.currentYValue);
+        },
+
         pageWheelerAddEventListener(){
 
-            window.addEventListener("wheel", async(e) => {
+            window.addEventListener("wheel", (e) => {
                 if (!this.pageIsShow) return ;
                 this.moveingExtent += e.deltaY;
                 if ( this.moveingExtent < 0 ){
@@ -38,6 +83,10 @@ export default {
                 }
                 this.ref.scroll(0,this.moveingExtent)
              })
+            
+            // window.addEventListener("touchmove",(e) => this.wheelFunction(e))
+            // window.addEventListener("wheel",(e) => this.wheelFunction(e))
+            window.addEventListener('touchmove',(e) => this.wheelFunction(e));
         },
 
         pageWheelerIsReady(){

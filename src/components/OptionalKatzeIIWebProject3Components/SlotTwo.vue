@@ -1,6 +1,6 @@
 
 <template>
-    <div class="slot-2" ref="optionKatzeIIWebProject1Slot2">
+    <div class="slot-2" ref="optionKatzeIIWebProject1Slot2" @touchmove="scrolling" @touchstart="scrolling">
         
             <header class="header">
                 <header-title
@@ -117,6 +117,11 @@ export default {
             subTitle: "2019-Option Katze II",
             fontColor: "#EAAB15",
         }
+    },
+    methods:{
+        scrolling(event){
+            this.wheelFunction(event);
+        }
     }
 }
 </script>
@@ -133,6 +138,7 @@ export default {
     overflow-y: scroll;
     overflow-x: hidden;
     padding:30px 30px 30px 30px;
+    padding-bottom:150px;
     @media(min-width:800px){
         padding-left:50px;
     }

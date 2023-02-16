@@ -1,5 +1,5 @@
 <template>
-    <article class="slot-2" ref="dockerWebProject6slot2">
+    <article class="slot-2" ref="dockerWebProject6slot2" @touchmove="scrolling" @touchstart="scrolling">
 
         <div class="header" >
             <header-title
@@ -108,6 +108,11 @@ export default {
     mounted(){
         this.pageWheelerInit(this.$refs.dockerWebProject6slot2,this.isShow);
     },
+    methods:{
+        scrolling(event){
+            this.wheelFunction(event);
+        }
+    }
 }
 </script>
 
@@ -117,6 +122,7 @@ export default {
     width:100%;
     height:100%;
     padding:20px;
+    padding-bottom:100px;
     background-color: rgb(212, 228, 246);
     font-family:$tertiary-font;
     overflow-y: scroll;

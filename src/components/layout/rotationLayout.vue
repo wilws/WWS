@@ -29,6 +29,7 @@ export default {
                 backgroundColor : "white",
                 color:"Black",
             },
+            offSetY:0,
             boxClass : "",    // to pin in the targeted box to rotate if this slot is repeated used
             animationClass:{  // to trigger animation
                 'slot1':[],
@@ -50,15 +51,19 @@ export default {
     },
     mounted(){
         // Responsive Setting                       
-        window.addEventListener("resize",this.resizeAdjustor);    // Always ready to trigger "resize()" when width change.      
-   },
-   inject:['updateRotateDeg'],
+        // window.addEventListener("resize",this.resizeAdjustor);    // Always ready to trigger "resize()" when width change.      
+    },
+
+   inject:['updateRotateDeg'],   // function from components in "screen" folder
 
     methods:{
+
         rotate(direction){   
+            // this methods is triggered from components under "screens" folder
             if (!this.singlePageChecker()) {   // [ Disallow this action ]: Check if it is just 1 page i.e only slot 1 or no slot at all. if yes, leave the function
                 return
             }
+
             switch(direction) {
                 case "forward":
                     this.rotateDeg -= 90;
@@ -74,25 +79,80 @@ export default {
             }
             document.querySelector(this.boxClass).style.transition = "transform 1s";  // When rotate browser, we want to see the rotation
             this.rotateController();  
-            this.updateRotateDeg( this.rotateDeg );
+
+            // send rotateDeg back to parent components in "sections"
+            // inform the parent which slot is on screen
+            this.updateRotateDeg( this.rotateDeg ); 
         },
 
-        resizeAdjustor(){
-            //to move the box to correct axis when rotate
+        // *** Depreciated ***
+        resizeAdjustor(){ 
+            // It produce weired effect in ios safari.
+            // when ios safari scroll, it will be unwantedly triigered 
+            // to move the box to correct axis when rotate
             document.querySelector(this.boxClass).style.transition = "transform 0s";   // When resize browser, we dont what the delay effect. It stop the transition delay when resize
             this.rotateController();                                          
-        },
+        },// *** Depreciated ***
 
-        mainScrollBarLocker(n){
-            //  lock the bar when box is rotated
+        // *** Depreciated ***
+        mainScrollBarLocker(n){ 
+            //  Lock the bar when box is rotated
+            //  ! Depreciated. As it does not work on ios safari
+            //  use "bodyScrollBarLocker()" now.
             if(n){
-                // document.querySelector('body').style.overflow = 'hidden';
+                document.querySelector('body').style.overflow = 'hidden';
                 document.getElementsByTagName('body')[0].style.overflow = 'hidden';
-                
-            } else {
-                // document.querySelector('body').style.overflow = 'scroll';
+                document.getElementsByTagName('html')[0].style.overflow = 'hidden';
+            } 
+            else {
+                document.querySelector('body').style.overflow = 'scroll';
                 document.getElementsByTagName('body')[0].style.overflow = 'visible';
+                document.getElementsByTagName('html')[0].style.overflow = 'visible';
             }
+        },// *** Depreciated ***
+
+
+        bodyScrollBarLocker(deg){
+            //  Lock the bar by setting body position as "fixed" when box is rotated
+
+            const body = document.documentElement || document.body;
+            const scrollY = body.scrollTop;
+       
+            switch(deg){
+
+                case 0:
+
+                    // box rotate back to the slot 1
+                    // Reset it to "relative, make it scrollable"
+                    body.style.position="relative";
+                    body.style.top = 'unset';
+                    body.scrollTo({ top:this.offSetY , left:0, behavior: "instant"})
+                    this.offSetY = 0;
+
+                    document.getElementsByTagName('body')[0].style.overflow = 'visible';
+                    document.getElementsByTagName('html')[0].style.overflow = 'visible';
+                    break;
+
+                case -90:
+
+                    // box rotate from slot 2 to slot 1. Since bar already locked. no action required
+                    if (body.style.position === "fixed") return;    
+
+                    // box rotate from slot 1 to slot 2.  
+                    // Lock the scroll bar by make slot one as fixed
+                    body.style.position="fixed";
+                    body.style.top = `-${scrollY}px`;
+                    this.offSetY = scrollY;
+
+                    document.getElementsByTagName('body')[0].style.overflow = 'hidden';
+                    document.getElementsByTagName('html')[0].style.overflow = 'hidden';
+                    
+                    break;
+                default:
+                    // box rotate from slot 2 to slot 3 or slot 3 to slot 4
+                    // Since bar already locked in case -90. no action required
+                    return;
+            }          
         },
 
         preSetting(buttonSetting={}, boxClass=""){
@@ -120,7 +180,6 @@ export default {
                 } 
             })
         },
-
   
 
         rotateController(){
@@ -128,28 +187,25 @@ export default {
             const translateZ = `-${vw/2}px`;
             document.querySelector(this.boxClass).style.transform = `translateZ(${translateZ}) rotateY(${this.rotateDeg}deg) `;
             
-
-
             this.animationClassRemover();          // remove animation when go back
-            this.closeOpenedImageScreen();         // close all the opened image in showImageFullScreen.vue
             
-            this.NonDisplayedPageInvisible(); // invisible faces that is not displaying;
+            // this.closeOpenedImageScreen();      // close all the opened image in showImageFullScreen.vue
             
-            if (!this.rotateDeg){                  // if rotate back to font   
-                 this.mainScrollBarLocker(false);  // unlockscroll bar
-                 
-            } else {
-                this.mainScrollBarLocker(true)     // lockscroll bar when go to project details
-                this.animationClassController(this.rotateDeg);         
-            }
+            this.NonDisplayedPageInvisible();          // invisible faces that is not displaying;
+            this.bodyScrollBarLocker(this.rotateDeg)   // Lock body scroll bar if rotate away from slot 1
+            this.animationClassController(this.rotateDeg);    // Reset .animation class.
         },
 
         animationClassController(n){
+
+            // add "animation" class to element in the slot on screen.
+            // remove "animation" class to element in the slots not on screen.
+            // so the animation could be triggered wheneven the slot is shown
     
             let classList = []
             switch(n){
-                // case 0:
-                //     break
+                case 0:
+                    break
                 case -90:
                     classList = this.animationClass.slot2;
                     break;
@@ -160,23 +216,29 @@ export default {
                     classList = this.animationClass.slot4;
                     break
             }
+    
             this.animationClassInserter(classList);
         },
 
         animationClassInserter(n){
+            // n is list of element tag, eg : ['div','img']
+            // n is the classList that contain element that need to have ".animation" attached
+            // n is set in components under "sections" folder
+            
             n.forEach((c) => {
                 document.querySelector(c).classList.add('animation');
             });
         },
         animationClassRemover(){
+            // opposite to animationClassInserter
             document.querySelectorAll('.animation').forEach((c) => {
                 c.classList.remove('animation');
-            })
-            
+            });
         },
 
         singlePageChecker(){
-            // check if it is just 1 page i.e only slot 1 or no slot at all. if yes, disable forward/backward function
+            // check if it is just 1 page i.e only slot 1 or no slot at all.
+            // if yes, disable forward/backward function
             if (!this.hasSlot1 && !this.hasSlot2 && !this.hasSlot3 && !this.hasSlot4){
                 return false
             }
@@ -203,6 +265,7 @@ export default {
         },
 
         closeOpenedImageScreen(){
+            // Not in use 
             // The function related to component "showImageInFullScreen. 
             // we wanna close the image screen when rotation happens.
             document.querySelectorAll(".imageInFullScreen").forEach((e)=>{
@@ -211,43 +274,6 @@ export default {
                 }
             });
         },
-
-        scrollButton(id){
-            // For testing purpose
-
-
-            // console.log( 'scrolToBottom');
-            console.log( id);
-            id = '.slot2-wrapper'
-            const element = document.querySelector(id);
-
-            element.addEventListener("scroll",()=>{
-                alert('click')
-                element.scrollTo({
-                    top: 1000,
-                    // left: 100,
-                    behavior: 'smooth'
-                    });
-            });
-
-            // element.onwheel= ()=>{
-            //     console.log('hit')
-                
-            // }
-
-            // element.scrollTop = element.scrollToBottom;
-
-            // let dis = 0
-            // window.onwheel = function(){ 
-            //     console.log('hit')
-            //  }
-            // window.addEventListener("wheel",()=>{
-                // console.log('hit')
-                // dis += 10
-                // element.scrollTo(0,10000)
-            // });
-
-        }
     }
 
 }

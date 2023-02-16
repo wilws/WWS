@@ -149,6 +149,10 @@ export default {
             color:"White",
         }
         this.$refs.rotationLayoutRef4.boxClass = ".graphic-design-project-1 .space .box";
+        
+        //  Tell rotation layout which slot contain elements that has animation.
+        //  Animation will be trigger when that slot is on screen
+        //  Animation will be reset when taht slot is leaving from screen 
         this.$refs.rotationLayoutRef4.animationClass = { 
                 'slot1':[],
                 'slot2':[
@@ -177,7 +181,7 @@ export default {
             document.querySelector(this.id).scrollIntoView();
             setTimeout(() => {
                 this.$refs.rotationLayoutRef4.rotate('forward');
-            }, 200);
+            }, 300);
         }
     }
 }

@@ -1,6 +1,6 @@
 
 <template>
-    <div class="slot-2" ref="pythonDataProject1Slot2">
+    <div class="slot-2" ref="pythonDataProject1Slot2" @touchmove="scrolling" @touchstart="scrolling">
         
             <div class="header">
                 <header-title
@@ -47,6 +47,11 @@ export default {
             subTitle: "2022-Company Data Scrapper",
             fontColor: "#0a69a2",
         }
+    },
+    methods:{
+        scrolling(event){
+            this.wheelFunction(event);
+        }
     }
 }
 </script>
@@ -58,6 +63,8 @@ export default {
     position:relative;
     width:100%;
     height:100%;
+    padding:20px;
+    padding-bottom:100px;
     background-color: rgb(255, 255, 255);
     font-family:$tertiary-font;
     overflow-y: scroll;
@@ -75,10 +82,11 @@ export default {
 
     .content-wrapper{
         width:100%;
-        height: 90%;
+        /* height: 90%; */
         padding: 20px;
         background-color: #0a69a2;
         border-bottom-right-radius: 80px;
+        box-sizing: border-box;
         display: flex;
         flex-direction: column;
         overflow: scroll;
@@ -98,6 +106,7 @@ export default {
         .description{
             position: relative;
             width:100%;
+               overflow: scroll;
             margin-top:20px;
             box-sizing: border-box;
   

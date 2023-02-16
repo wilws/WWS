@@ -34,7 +34,7 @@ export default {
             linkToProjectDescription: "Go to the Web Page",
             projectIconUrl: require('@/assets/img/projects/web_project_1/logo.png'),
             FrontEndTechList: ['Vue-CLI','Vuex'],
-            BackEndTechList: ['NodeJs','TypeScript', 'ExpressJs', 'MongoDB'],
+            BackEndTechList: ['NodeJs','TypeScript', 'MongoDB'],
             DesignStyleList: ['REST API', 'JWT','Stripe API'],
             mediaType:"video",
             mediaDisplayUrl: require('@/assets/img/projects/web_project_1/ellow_video.mp4'),

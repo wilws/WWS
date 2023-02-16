@@ -86,7 +86,7 @@ export default {
             document.querySelector(this.id).scrollIntoView();
             setTimeout(() => {
                 this.$refs.rotationLayoutRefDataProject1.rotate('forward');
-            }, 200);
+            }, 300);
         },
         updateRotateDeg(deg){
             this.rotateDeg = deg;
