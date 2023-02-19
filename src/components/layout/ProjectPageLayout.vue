@@ -76,7 +76,12 @@ export default {
             workDisplay: this.workDisplay
         }
     },
-
+    inject:['setViewPages'],
+    watch:{
+        scrollToPage(bool){
+            this.setViewPages(this.id,bool);
+        }
+    },
     methods:{
         workDisplay(){
             this.$emit('work-display');

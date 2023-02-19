@@ -11,8 +11,6 @@
         <div class="content">
             <tarot-documentation/>
         </div>
-
-
      </div>
 </template>
 

@@ -62,27 +62,43 @@ export default {
 
   mounted(){
     this.disableIOSScalability();              // [mixins function]. to stop the ISO scalability during rotation
-    // window.addEventListener('resize',()=>{   
-    //     this.defaultBoxes();                // [mixins function]. to turn all the boxex back to frontpage (slot1)
-    // });
+    window.addEventListener('resize',()=>{   
+        
+      this.resizePositionHandler();
+    });
 
  
                      
   },
   data(){
     return {
-      showMenuBtn:true
+      showMenuBtn:true,
+      viewedPages:[],
+      currentPage:""
     }
   },
   provide(){
     return {
       menuButtonOnOffSwitch: this.menuButtonOnOffSwitch,
+      setViewPages: this.setViewPages
     }
   },
   methods:{
     menuButtonOnOffSwitch(bool){
       this.showMenuBtn = bool;
     },
+    setViewPages(id,scrollToPage){
+      if (scrollToPage){ 
+        this.viewedPages.push(id);
+      } else {
+        this.viewedPages.pop();
+      }
+      this.currentPage = this.viewedPages[this.viewedPages.length - 1];
+    },
+    resizePositionHandler(){
+      // this.defaultBoxes();                // [mixins function]. to turn all the boxex back to frontpage (slot1)
+      document.querySelector(this.currentPage).scrollIntoView()
+    }
   }
   
 }

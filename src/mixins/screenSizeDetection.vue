@@ -1,11 +1,13 @@
 <script>
 export default {
+
     methods:{
         screenRotatedDetector(){
             // return "true" if the screen is horizontal
             // return "false" if the screen is vertical   
             return this.getWidth() > this.getHeight() ? true : false
         },
+       
         getHeight(){
             //get screen height
             // return window.screen.height;      // This doesnt work in iPhone

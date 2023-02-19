@@ -85,6 +85,7 @@ export default {
             this.updateRotateDeg( this.rotateDeg ); 
         },
 
+
         // *** Depreciated ***
         resizeAdjustor(){ 
             // It produce weired effect in ios safari.
@@ -93,6 +94,7 @@ export default {
             document.querySelector(this.boxClass).style.transition = "transform 0s";   // When resize browser, we dont what the delay effect. It stop the transition delay when resize
             this.rotateController();                                          
         },// *** Depreciated ***
+
 
         // *** Depreciated ***
         mainScrollBarLocker(n){ 
