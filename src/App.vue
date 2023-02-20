@@ -61,6 +61,8 @@ export default {
   },
 
   mounted(){
+
+    this.setCurrentPageWhenMounted()
     
     this.disableIOSScalability();     // [mixins function]. to stop the ISO scalability during rotation
     this.setPagesOffsetTop();         // store the offsetY of each page.
@@ -105,6 +107,13 @@ export default {
       this.showMenuBtn = bool;
     },
 
+    setCurrentPageWhenMounted(){
+        const id = window.location.href.split("/")[3] || "#index";
+        const offsetTop = document.querySelector(id).offsetTop || 0;
+        this.currentPage.id= id;
+        this.currentPage.offsetY = offsetTop;
+    },
+
     setPagesOffsetTop(){
       // This is to store the offsetTop of each pages.
       this.pagesOffsetTop = {};
@@ -121,10 +130,12 @@ export default {
     resizeEventHandler(){
        // this.defaultBoxes();     // [mixins function]. to turn all the boxex back to frontpage (slot1)  
        if(this.screenSizeDetection_checkIfRotate()){
+         console.log(this.currentPage)
           this.isResizeEffectOn = true
           this.setPagesOffsetTop();     // To reset each pages's offsetTop. because it changed after rotation
           document.querySelector(this.currentPage.id).scrollIntoView({behavior:'instant'})
           this.screenSizeDetection_setWindowWidth();
+          console.log('trigger resizeHandler')
       }
     },
 

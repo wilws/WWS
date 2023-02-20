@@ -37,6 +37,7 @@ export default {
                 'slot3':[],
                 'slot4':[],
             },
+            isBoxRotating:false,
        }
     },
 
@@ -51,21 +52,25 @@ export default {
     },
     mounted(){
         // Responsive Setting   
-        // const windowWidth = this.getWidth();                       
-        // window.addEventListener("resize",() => {
-        //     const bodyWidth = document.body.offsetWidth;
-        //     if(windowWidth !== bodyWidth){ 
-        //          console.log(' triggr')
-        //         this.resizeAdjustor()
-        //     } else {
-        //         console.log('not triggr')
-        //     }
-        // });    // Always ready to trigger "resize()" when width change.      
+            
+        // Action when Screen rotate
+        this.screenSizeDetection_setWindowWidth()                
+        window.addEventListener("resize",() => {
+            if(this.screenSizeDetection_checkIfRotate()){
+                this.screenSizeDetection_setWindowWidth();
+                this.rotate('firstPage')
+            }
+            
+        });    // Always ready to trigger "resize()" when width change.      
     },
 
    inject:['updateRotateDeg'],   // function from components in "screen" folder
 
     methods:{
+
+        setIsBoxResizing(bool){
+            this.isBoxRotating = bool;
+        },
 
         rotate(direction){   
             // this methods is triggered from components under "screens" folder
@@ -98,6 +103,7 @@ export default {
       
         resizeAdjustor(){ 
             // to move the box to correct axis when rotate
+            console.log(this.boxClass)
             document.querySelector(this.boxClass).style.transition = "transform 0s";   // When resize browser, we dont what the delay effect. It stop the transition delay when resize
             this.rotateController();                                          
         },
@@ -225,15 +231,11 @@ export default {
                     classList = this.animationClass.slot4;
                     break
             }
-    
+
             this.animationClassInserter(classList);
         },
 
         animationClassInserter(n){
-            // n is list of element tag, eg : ['div','img']
-            // n is the classList that contain element that need to have ".animation" attached
-            // n is set in components under "sections" folder
-            
             n.forEach((c) => {
                 document.querySelector(c).classList.add('animation');
             });

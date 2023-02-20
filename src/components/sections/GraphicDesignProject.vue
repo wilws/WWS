@@ -136,9 +136,16 @@ export default {
             buttonColor:"grey",
             id: "#graphic-design-project-1",
             projectDescription :"In the spring of 2019, my friend Jason struggled in his cake shop business. Since the rent in Hong Kong is ridiculously high, he planned to switch the business mode from a physical dessert shop to an online cake shop. He asked my assistance to transform the image of the shop."+
-            "<br><br>"+ 
-
-"I re-designed the shop logo in a minimalist style. Moreover, inspired by the ancient Asian interlocking architecture concept “Nailless”,  I designed my own version’s “glue-less” cake box to put the brand on the high-end track."
+            "<br><br>"+ "I re-designed the shop logo in a minimalist style. Moreover, inspired by the ancient Asian interlocking architecture concept “Nailless”,  I designed my own version’s “glue-less” cake box to put the brand on the high-end track.",
+            rotateDeg:0,
+            slotTwoIsShow:false,
+            slotThreeIsShow:false,
+            slotFourIsShow:false,
+        }
+    },
+    provide(){
+        return {
+            updateRotateDeg:this.updateRotateDeg
         }
     },
     mounted(){
@@ -160,7 +167,7 @@ export default {
                     '.arrow-wrapper',
                     '.old-icon',
                     // '.right-side p',
-                    '#graphic-design-project-1 div div div.face4 div div.right-side div.ai-img img'
+                    // '#graphic-design-project-1 div div div.face4 div div.right-side div.ai-img img'
                 ],
                 'slot3':['.col.col-2','.col.col-3'],
                 'slot4':[],
@@ -170,8 +177,12 @@ export default {
         // if true, add class "rotated" to the <section> tag
         // We treat the style of the horizontal screen separately
         this.deviceRotationResponse(this.id)
+        this.screenSizeDetection_setWindowWidth();
         window.addEventListener('resize',()=>{
-            this.deviceRotationResponse(this.id);
+            if(this.screenSizeDetection_checkIfRotate()){
+                this.deviceRotationResponse(this.id);
+                this.screenSizeDetection_setWindowWidth();
+            }
         });
 
 
@@ -182,6 +193,30 @@ export default {
             setTimeout(() => {
                 this.$refs.rotationLayoutRef4.rotate('forward');
             }, 300);
+        },
+        updateRotateDeg(deg){
+            this.rotateDeg = deg;
+            this.unsetSlotIsSHow();
+           
+            switch (deg){
+                case 0:
+                    this.unsetSlotIsSHow();
+                    break;
+                case -90:
+                    this.slotTwoIsShow = true;
+                    break;
+                case -180:
+                    this.slotThreeIsShow = true;
+                    break;
+                case -270:
+                    this.slotFourIsShow = true;
+                    break;
+            }
+        },
+        unsetSlotIsSHow(){
+            this.slotTwoIsShow = false
+            this.slotThreeIsShow = false
+            this.slotFourIsShow = false
         }
     }
 }
@@ -189,9 +224,9 @@ export default {
 
 
 <style lang="scss" scoped>
-// .web-graphic-design-project-1{
-//     background-color: rgb(255, 255, 255);
-// }
+.web-graphic-design-project-1{
+     background-color: rgb(255, 255, 255);
+}
 
 // slot 1
 .slot-wrapper{

@@ -191,7 +191,16 @@ export default {
             buttonColor:"Black",
             id: "#interior-design-project-1",
             projectDescription :
-            "In Hong Kong, it is quite hard to get a private place to relax since rent is so high in this tiny city. In 2015, My friend, Berry, and I were so lucky to have a chance to rent a place in a factory area at a very economic price. However, as mentioned, it was in a factory area, and the place was “not so fancy”, or be more accurate — “messy”. Let's see how we 2 turned a messy store room into a cozy studio."
+            "In Hong Kong, it is quite hard to get a private place to relax since rent is so high in this tiny city. In 2015, My friend, Berry, and I were so lucky to have a chance to rent a place in a factory area at a very economic price. However, as mentioned, it was in a factory area, and the place was “not so fancy”, or be more accurate — “messy”. Let's see how we 2 turned a messy store room into a cozy studio.",
+            rotateDeg:0,
+            slotTwoIsShow:false,
+            slotThreeIsShow:false,
+            slotFourIsShow:false,
+        }
+    },
+    provide(){
+        return {
+            updateRotateDeg:this.updateRotateDeg
         }
     },
     methods:{
@@ -201,6 +210,30 @@ export default {
                 this.$refs.rotationLayoutRef5.rotate('forward');
             }, 300);
         },
+        updateRotateDeg(deg){
+            this.rotateDeg = deg;
+            this.unsetSlotIsSHow();
+           
+            switch (deg){
+                case 0:
+                    this.unsetSlotIsSHow();
+                    break;
+                case -90:
+                    this.slotTwoIsShow = true;
+                    break;
+                case -180:
+                    this.slotThreeIsShow = true;
+                    break;
+                case -270:
+                    this.slotFourIsShow = true;
+                    break;
+            }
+        },
+        unsetSlotIsSHow(){
+            this.slotTwoIsShow = false
+            this.slotThreeIsShow = false
+            this.slotFourIsShow = false
+        }
     }
 }
 </script>
