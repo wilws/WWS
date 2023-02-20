@@ -1,5 +1,5 @@
 <template>
-    <section class="react-native-project-1" id="react-native-project-1">
+    <section class="project react-native-project-1" id="react-native-project-1">
 
         <rotation-layout ref="rotationLayoutReactNativeProject1">
             

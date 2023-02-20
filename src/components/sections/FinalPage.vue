@@ -1,5 +1,5 @@
 <template>
-    <section class="assignment" id="assignment">
+    <section class="project assignment" id="assignment">
             <div class="background">                                  
                 <img :src="require('@/assets/img/final_page/cover.jpg')" class="dog-img">
                 <div class="my-dog-tag">

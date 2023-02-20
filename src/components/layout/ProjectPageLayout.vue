@@ -63,23 +63,17 @@ export default {
     ],
     data(){
         return {
-            scrollToPage : false
+            scrollToPage : false,
         }
     },
     mounted(){
-        window.addEventListener("scroll",()=>{        
+        window.addEventListener("scroll",()=>{    
             this.scrollToPageDetection();
         });
     },
     provide(){
         return {
             workDisplay: this.workDisplay
-        }
-    },
-    inject:['setViewPages'],
-    watch:{
-        scrollToPage(bool){
-            this.setViewPages(this.id,bool);
         }
     },
     methods:{

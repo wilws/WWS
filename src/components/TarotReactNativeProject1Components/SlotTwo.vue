@@ -59,6 +59,7 @@ export default {
     overflow-y: scroll;
     overflow-x: hidden;
     z-index: 0;
+    
   
     .header{
         position:relative;

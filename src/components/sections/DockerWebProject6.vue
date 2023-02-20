@@ -1,5 +1,5 @@
 <template>
-    <section class="web-project-6" id="web-project-6">
+    <section class="project web-project-6" id="web-project-6">
 
         <rotation-layout ref="rotationLayoutRef6">
             

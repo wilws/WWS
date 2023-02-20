@@ -1,5 +1,5 @@
 <template>
-    <section class="index-page" id="index">
+    <section class="project index-page" id="index">
 
         <div class="img-wrapper">
             <div class="name">

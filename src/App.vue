@@ -1,6 +1,6 @@
 <template>
 
-  <div class="container">
+  <div class="container" ref="mainContainer">
     <menu-page :showMenuBtn="showMenuBtn" />
     <index-page/>
     <skill-set-page/>
@@ -61,43 +61,93 @@ export default {
   },
 
   mounted(){
-    this.disableIOSScalability();              // [mixins function]. to stop the ISO scalability during rotation
-    window.addEventListener('resize',()=>{   
-        
-      this.resizePositionHandler();
-    });
-
+    
+    this.disableIOSScalability();     // [mixins function]. to stop the ISO scalability during rotation
+    this.setPagesOffsetTop();         // store the offsetY of each page.
+    window.addEventListener('scroll',this.scrollEventHandler);
  
-                     
+    this.screenSizeDetection_setWindowWidth()   // Store the window width for comparing the body's width to determine if rotation happen
+    window.addEventListener('resize',this.resizeEventHandler); 
   },
+
   data(){
     return {
       showMenuBtn:true,
-      viewedPages:[],
-      currentPage:""
+      currentPage:{id:"#index",offsetY:0},
+      isResizeEffectOn:false,
+      pagesOffsetTop:{}
     }
   },
+
   provide(){
     return {
       menuButtonOnOffSwitch: this.menuButtonOnOffSwitch,
-      setViewPages: this.setViewPages
     }
   },
+
+  watch:{
+    isResizeEffectOn(value){
+      // When this.setIsResizeEffectOn is set to "true", "scrollEventHandler()" in scroll event will be supressed.
+      // Reason: IOS when resize event is triggered, the change of height of pages will trigger scroll event
+      // "scrollEventHandler()" will therefore unwantedly be triggered.
+      // this.setIsResizeEffectOn is set back to "false" after 1s
+      if(value){
+        setTimeout(() => {
+          this.setIsResizeEffectOn(false)
+        },1000)
+      }
+    }
+  },
+
   methods:{
+
     menuButtonOnOffSwitch(bool){
       this.showMenuBtn = bool;
     },
-    setViewPages(id,scrollToPage){
-      if (scrollToPage){ 
-        this.viewedPages.push(id);
-      } else {
-        this.viewedPages.pop();
-      }
-      this.currentPage = this.viewedPages[this.viewedPages.length - 1];
+
+    setPagesOffsetTop(){
+      // This is to store the offsetTop of each pages.
+      this.pagesOffsetTop = {};
+      this.$refs.mainContainer.querySelectorAll('.project').forEach((section) => {
+          const id = `#${section.getAttribute("id")}`;
+          this.pagesOffsetTop[section.offsetTop] = id;   
+      });
     },
-    resizePositionHandler(){
-      // this.defaultBoxes();                // [mixins function]. to turn all the boxex back to frontpage (slot1)
-      document.querySelector(this.currentPage).scrollIntoView()
+
+    setIsResizeEffectOn(bool){
+      this.isResizeEffectOn = bool;
+    },
+
+    resizeEventHandler(){
+       // this.defaultBoxes();     // [mixins function]. to turn all the boxex back to frontpage (slot1)  
+       if(this.screenSizeDetection_checkIfRotate()){
+          this.isResizeEffectOn = true
+          this.setPagesOffsetTop();     // To reset each pages's offsetTop. because it changed after rotation
+          document.querySelector(this.currentPage.id).scrollIntoView({behavior:'instant'})
+          this.screenSizeDetection_setWindowWidth();
+      }
+    },
+
+    scrollEventHandler(){
+      // This function determine which page is currently on screen.
+      // the "currently on screen page" will be stored in 
+      // currentPage { 'id': STRING ,'offsetY': NUMBER}
+        
+      if (this.isResizeEffectOn) return;     
+
+      const scrollDistanceFromTop = window.scrollY;
+      const pagesOffsetTopValues = Object.keys(this.pagesOffsetTop);
+      pagesOffsetTopValues.sort(function(a,b) { return (+a) - (+b)})
+
+      for (let i =0; i < pagesOffsetTopValues.length; i++){
+        if (scrollDistanceFromTop < +pagesOffsetTopValues[i]){
+          if (this.pagesOffsetTop[pagesOffsetTopValues[i-1]] !== this.currentPage) {
+            this.currentPage.id = this.pagesOffsetTop[pagesOffsetTopValues[i-1]];
+            this.currentPage.offsetY = pagesOffsetTopValues[i-1];
+          }
+          break;
+        }
+      }
     }
   }
   

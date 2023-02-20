@@ -1,5 +1,5 @@
 <template>
-    <section class="graphic-design-project-1" id="graphic-design-project-1">
+    <section class="project graphic-design-project-1" id="graphic-design-project-1">
         
         <rotation-layout ref="rotationLayoutRef4">
 

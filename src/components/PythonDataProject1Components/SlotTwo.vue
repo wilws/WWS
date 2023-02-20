@@ -70,6 +70,7 @@ export default {
     overflow-y: scroll;
     overflow-x: hidden;
     padding:30px 30px 30px 30px;
+    z-index: 7;
 
 
     .header{

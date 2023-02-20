@@ -1,7 +1,21 @@
 <script>
 export default {
 
+    data(){
+        return {
+            windowWidth:0,
+        }
+    },
     methods:{
+        screenSizeDetection_checkIfRotate(){
+            const bodyWidth = document.body.offsetWidth;
+            return (this.windowWidth !== bodyWidth) ? true : false
+        },
+        screenSizeDetection_setWindowWidth(){
+            this.windowWidth = this.getWidth();  
+        },
+ 
+      
         screenRotatedDetector(){
             // return "true" if the screen is horizontal
             // return "false" if the screen is vertical   
@@ -49,7 +63,8 @@ export default {
         disableIOSScalability(){
             // ISO has weird scale up performance when rotation
             // fix by Scott Jehl on github scottjehl/iOS-Orientationchange-Fix that works for iOS6.
-            if (navigator.userAgent.match(/iPhone/i) || navigator.userAgent.match(/iPad/i)) {
+
+            if (navigator.userAgent.match(/iPhone/i) || navigator.userAgent.match(/iPad/i) || navigator.userAgent.match(/Android/i)) {
                 var viewportmeta = document.querySelector('meta[name="viewport"]');
                     if (viewportmeta) {
                         viewportmeta.content = 'width=device-width, minimum-scale=1.0, maximum-scale=1.0, initial-scale=1.0';

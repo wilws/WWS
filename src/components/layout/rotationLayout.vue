@@ -50,8 +50,17 @@ export default {
         this.buttonVisibilityController();
     },
     mounted(){
-        // Responsive Setting                       
-        // window.addEventListener("resize",this.resizeAdjustor);    // Always ready to trigger "resize()" when width change.      
+        // Responsive Setting   
+        // const windowWidth = this.getWidth();                       
+        // window.addEventListener("resize",() => {
+        //     const bodyWidth = document.body.offsetWidth;
+        //     if(windowWidth !== bodyWidth){ 
+        //          console.log(' triggr')
+        //         this.resizeAdjustor()
+        //     } else {
+        //         console.log('not triggr')
+        //     }
+        // });    // Always ready to trigger "resize()" when width change.      
     },
 
    inject:['updateRotateDeg'],   // function from components in "screen" folder
@@ -86,14 +95,12 @@ export default {
         },
 
 
-        // *** Depreciated ***
+      
         resizeAdjustor(){ 
-            // It produce weired effect in ios safari.
-            // when ios safari scroll, it will be unwantedly triigered 
             // to move the box to correct axis when rotate
             document.querySelector(this.boxClass).style.transition = "transform 0s";   // When resize browser, we dont what the delay effect. It stop the transition delay when resize
             this.rotateController();                                          
-        },// *** Depreciated ***
+        },
 
 
         // *** Depreciated ***
